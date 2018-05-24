@@ -71,3 +71,17 @@ npm install --save-dev commitizen
 #### bug
 
 windows 7 环境下 cmder软件 对 git cz 一直报错，vscode 的terminal 是没问题的，和自带的cmd 命名工具也是没问题的，就暂时放弃了对bug的 继续跟进
+
+
+
+
+
+## 知识点
+
+1. `git clone  giturl --depth=1` 参数 --depth ==1 只拿到了一个分支一个 commit，便于快速的clone。如果在去fetch 其他的branch 和commits，直接`git fetch --all` 做不到的，要单独设置下  `git pull --unshallow` 或者 `git fetch --unshallow`  
+
+   > 前天git clone分支的时候使用总吧master 分支的东西clone下来，东西很多时间很长，加`--depth=1` 就可以解决了
+
+   参考链接 ： [`git clone --depth=1` 之后怎样获取完整仓库?](https://segmentfault.com/q/1010000000409170)
+
+   ​
