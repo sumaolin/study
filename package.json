@@ -1,0 +1,35 @@
+{
+  "name": "study",
+  "version": "0.0.1",
+  "description": "'学习demo'",
+  "main": "index.js",
+  "scripts": {
+    "cz": "git-cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumaolin/study.git"
+  },
+  "keywords": ["code"],
+  "author": "sumaolin619@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumaolin/study/issues"
+  },
+  "homepage": "https://github.com/sumaolin/study#readme",
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "conventional-changelog": "^1.1.24",
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "conventional-changelog": {
+      "path": "./node_modules/conventional-changelog"
+    }
+  }
+}
