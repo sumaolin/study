@@ -12,7 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/sumaolin/study.git"
   },
-  "keywords": ["code"],
+  "keywords": [
+    "code"
+  ],
   "author": "sumaolin619@gmail.com",
   "license": "ISC",
   "bugs": {
