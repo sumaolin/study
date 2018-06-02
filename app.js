@@ -4,7 +4,34 @@ const app = new Koa()
 app.use(async (ctx, next)=>{
   await next()
   ctx.response.type = 'text/html'
-  ctx.response.body = '<h1>Hello World</h1>'
+  // ctx.response.body = '<h1>Hello World</h1>'
+})
+
+// 记录执行时间
+app.use(async (ctx, next) => {
+  let stime = new Date().getTime()
+  await next()
+  let etime = new Date().getTime()
+  ctx.response.type = 'text/html'
+  ctx.response.body = `请求地址： ${ctx.path}, 响应时间：${etime - stime}ms`
+})
+
+app.use(async (ctx, next) => {
+  console.log('中间件1 doSoming')
+  await next();
+  console.log('中间件1 end')
+})
+
+app.use(async (ctx, next) => {
+  console.log('中间件2 doSoming')
+  // await next();
+  console.log('中间件2 end')
+})
+
+app.use(async (ctx, next) => {
+  console.log('中间件3 doSoming')
+  await next();
+  console.log('中间件3 end')
 })
 
 app.listen(3000, () => {
