@@ -1,7 +1,7 @@
 const Koa = require('koa')
 const app = new Koa()
 
-app.use(async (ctx, next)=>{
+app.use(async (ctx, next) => {
   await next()
   ctx.response.type = 'text/html'
   // ctx.response.body = '<h1>Hello World</h1>'
@@ -18,7 +18,7 @@ app.use(async (ctx, next) => {
 
 app.use(async (ctx, next) => {
   console.log('中间件1 doSoming')
-  await next();
+  await next()
   console.log('中间件1 end')
 })
 
@@ -30,7 +30,7 @@ app.use(async (ctx, next) => {
 
 app.use(async (ctx, next) => {
   console.log('中间件3 doSoming')
-  await next();
+  await next()
   console.log('中间件3 end')
 })
 
