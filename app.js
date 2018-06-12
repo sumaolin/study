@@ -7,31 +7,36 @@ app.use(async (ctx, next) => {
   // ctx.response.body = '<h1>Hello World</h1>'
 })
 
-// 记录执行时间
 app.use(async (ctx, next) => {
-  let stime = new Date().getTime()
-  await next()
-  let etime = new Date().getTime()
-  ctx.response.type = 'text/html'
-  ctx.response.body = `请求地址： ${ctx.path}, 响应时间：${etime - stime}ms`
+  if (ctx.request.path == '/') {
+    ctx.response.body = '<h1>index page</h1>'
+  } else {
+    await next()
+  }
 })
 
 app.use(async (ctx, next) => {
-  console.log('中间件1 doSoming')
-  await next()
-  console.log('中间件1 end')
+  if (ctx.request.path == '/') {
+    ctx.response.body = '<h1>index page</h1>'
+  } else {
+    await next()
+  }
 })
 
 app.use(async (ctx, next) => {
-  console.log('中间件2 doSoming')
-  // await next();
-  console.log('中间件2 end')
+  if (ctx.request.path == '/home') {
+    ctx.response.body = '<h1>home page</h1>'
+  } else {
+    await next()
+  }
 })
 
 app.use(async (ctx, next) => {
-  console.log('中间件3 doSoming')
-  await next()
-  console.log('中间件3 end')
+  if (ctx.request.path == '/404') {
+    ctx.response.body = '<h1>404 page</h1>'
+  } else {
+    await next()
+  }
 })
 
 app.listen(3000, () => {
