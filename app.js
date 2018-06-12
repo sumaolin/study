@@ -1,44 +1,37 @@
 const Koa = require('koa')
+// 后面加()
+const Router = require('koa-router')
 const app = new Koa()
 
-app.use(async (ctx, next) => {
+const irouter = new Router({
+  prefix: '/users'
+})
+irouter.get('/', async (ctx, next) => {
+  ctx.response.body = '<h1>index page</h1>'
   await next()
-  ctx.response.type = 'text/html'
-  // ctx.response.body = '<h1>Hello World</h1>'
 })
 
-app.use(async (ctx, next) => {
-  if (ctx.request.path == '/') {
-    ctx.response.body = '<h1>index page</h1>'
-  } else {
-    await next()
-  }
+irouter.get('/:id', async (ctx, next) => {
+  ctx.response.body = 'user Id:' + ctx.params.id
+  await next()
 })
 
-app.use(async (ctx, next) => {
-  if (ctx.request.path == '/') {
-    ctx.response.body = '<h1>index page</h1>'
-  } else {
-    await next()
-  }
+irouter.get('/home', async (ctx, next) => {
+  ctx.response.body = '<h1>home page</h1>'
+  await next()
 })
 
-app.use(async (ctx, next) => {
-  if (ctx.request.path == '/home') {
-    ctx.response.body = '<h1>home page</h1>'
-  } else {
-    await next()
-  }
+irouter.get('/404', async (ctx, next) => {
+  ctx.response.body = '<h1>404 page</h1>'
+  await next()
 })
 
-app.use(async (ctx, next) => {
-  if (ctx.request.path == '/404') {
-    ctx.response.body = '<h1>404 page</h1>'
-  } else {
-    await next()
-  }
+irouter.all('/*', async (ctx, next) => {
+  console.log('all action')
+  await next()
 })
 
+app.use(irouter.routes())
 app.listen(3000, () => {
   console.log('server is running at http://localhost:3000')
 })
