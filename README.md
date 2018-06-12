@@ -34,4 +34,9 @@
    })
    ```
 
-4.  
+
+
+
+### [4 refactor 重构](https://github.com/ikcamp/koa2-tutorial/tree/4-refactor)
+
+1. 关于 `router.allowedMethods()` 不清楚做什么用的， 看了下文章：[KOA2的koa-router中的allowedMethods()是必须的吗？有什么作用？](https://segmentfault.com/q/1010000013110474) ，实在没看明白有啥区别，只是说处理了`ctx.status` 为空的情况
