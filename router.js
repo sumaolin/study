@@ -6,6 +6,7 @@ const userRouter = new Router({
 module.exports = app => {
   userRouter.get('/', userController.index)
   userRouter.get('/login', userController.login)
+  userRouter.get('/json', userController.json)
 
   userRouter.get('/:id/posts', userController.postsParams)
 

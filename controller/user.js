@@ -1,6 +1,7 @@
 const userService = require('../service/user')
 module.exports = {
   index: async (ctx, next) => {
+    console.log(ctx.request.path)
     await ctx.render('user/index', {
       title: 'iKcamp欢迎您'
     })
@@ -12,6 +13,13 @@ module.exports = {
   },
   postsParams: async (ctx, next) => {
     ctx.response.body = 'user Id:' + ctx.params.id
+  },
+
+  json: async (ctx, next) => {
+    ctx.send({
+      status: 'success',
+      data: 'hello ikcmap'
+    })
   },
   register: async (ctx, next) => {
     let { name, password } = ctx.request.body
