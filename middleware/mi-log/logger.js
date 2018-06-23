@@ -1,4 +1,6 @@
 const log4js = require('log4js')
+const ip = require('ip')
+const access = require('./access')
 
 log4js.configure({
   appenders: {
@@ -19,6 +21,11 @@ log4js.configure({
 
 const methods = ['track', 'debug', 'info', 'warn', 'error', 'fatal', 'mark']
 
+const commonInfo = {
+  projectName: 'koa2-tutorial',
+  serverIp: ip.address()
+}
+
 module.exports = option => {
   return async (ctx, next) => {
     const contextLogger = {}
@@ -36,6 +43,14 @@ module.exports = option => {
     await next()
     const endDate = new Date()
     const resTime = endDate - startDate
-    logger.info(`相应时间为${resTime / 1000}s`)
+    logger.info(
+      access(
+        ctx,
+        {
+          responseTime: `相应时间为${resTime / 1000}s`
+        },
+        commonInfo
+      )
+    )
   }
 }
