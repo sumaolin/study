@@ -63,3 +63,4 @@ log4js.configure({
 ```
 
 2. 在`const logger = log4js.getLogger('cheese')` 中`getLogger()`中的参数不一定和上面配置中的appenders相同也可以使用，没弄清楚为啥？
+3. 对日志中间件进行错误处理的时候，catch是从Promise中的catch方法吗？需要进一步了解啊

@@ -14,7 +14,6 @@ const commonInfo = {
 module.exports = option => {
   return async (ctx, next) => {
     const opt = Object.assign({}, commonInfo, option || {})
-    console.log(option)
     const { logDir, appLogLevel, env, projectName, serverIp } = opt
     const appInfo = { projectName, serverIp }
     const contextLogger = {}

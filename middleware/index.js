@@ -13,7 +13,7 @@ module.exports = app => {
       serverIp: ip.address(),
       projectName: 'sumaolin',
       appLogLevel: 'info',
-      logDir: 'logs2'
+      logDir: 'logs'
     })
   )
   app.use(staticFile(path.resolve(__dirname, '../public')))
