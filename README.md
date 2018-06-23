@@ -40,3 +40,26 @@
 #### [4 refactor 重构](https://github.com/ikcamp/koa2-tutorial/tree/4-refactor)
 
 1. 关于 `router.allowedMethods()` 不清楚做什么用的， 看了下文章：[KOA2的koa-router中的allowedMethods()是必须的吗？有什么作用？](https://segmentfault.com/q/1010000013110474) ，实在没看明白有啥区别，只是说处理了`ctx.status` 为空的情况
+
+
+
+
+
+### 2018.06.23
+
+#### [8. log 日志中间件](https://github.com/ikcamp/koa2-tutorial/tree/8-mi-log) 
+
+1. `log4js`  的配置中：
+
+```json
+log4js.configure({
+    appenders: { c2: {type: 'file', filename: 'c2.log'}},
+    categories: {
+        default: {
+            appenders: ['c2'], level: 'error' //这的appenders 要是上面appenders中定义的；level不可缺少
+        }
+    }
+})
+```
+
+2. 在`const logger = log4js.getLogger('cheese')` 中`getLogger()`中的参数不一定和上面配置中的appenders相同也可以使用，没弄清楚为啥？
