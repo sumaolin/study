@@ -10,3 +10,17 @@
 [2018-06-23T19:50:37.403] [INFO] c2 - {"projectName":"koa2-tutorial","serverIp":"0.9.0.1","method":"GET","url":"/user/json","host":"localhost:3000","message":{"responseTime":"相应时间为0.01s"},"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36"}
 [2018-06-23T19:51:44.878] [INFO] c2 - mi-send
 [2018-06-23T19:51:44.884] [INFO] c2 - {"projectName":"koa2-tutorial","serverIp":"192.168.1.104","method":"GET","url":"/user/json","host":"localhost:3000","message":{"responseTime":"相应时间为0.01s"},"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36"}
+[2018-06-23T20:28:49.738] [INFO] c2 - mi-send
+[2018-06-23T20:28:49.743] [INFO] c2 - {"logDir":"logs","appLogLevel":"info","env":"dev","projectName":"koa2-tutorial","serverIp":"192.168.1.104","method":"GET","url":"/user/json","host":"localhost:3000","message":{"responseTime":"相应时间为0.009s"},"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36"}
+[2018-06-23T20:32:06.858] [INFO] c2 - mi-send
+[2018-06-23T20:32:06.863] [INFO] c2 - {"logDir":"logs","appLogLevel":"info","env":"dev","projectName":"koa2-tutorial","serverIp":"192.168.1.104","method":"GET","url":"/user/json","host":"localhost:3000","message":{"responseTime":"相应时间为0.013s"},"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36"}
+[2018-06-23T20:37:40.777] [INFO] c2 - mi-send
+[2018-06-23T20:37:40.783] [INFO] c2 - {"logDir":"logs","appLogLevel":"info","env":"dev","projectName":"koa2-tutorial","serverIp":"192.168.1.104","method":"GET","url":"/user/json","host":"localhost:3000","message":{"responseTime":"相应时间为0.011s"},"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36"}
+[2018-06-23T20:39:00.971] [INFO] c2 - mi-send
+[2018-06-23T20:39:00.979] [INFO] c2 - {"logDir":"logs","appLogLevel":"info","env":"dev","projectName":"koa2-tutorial","serverIp":"192.168.1.104","method":"GET","url":"/user/json","host":"localhost:3000","message":{"responseTime":"相应时间为0.013s"},"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36"}
+[2018-06-23T21:30:07.049] [INFO] c2 - mi-send
+[2018-06-23T21:30:07.055] [INFO] c2 - {"projectName":"koa2-tutorial","serverIp":"0.0.0.0","method":"GET","url":"/user/json","host":"localhost:3000","message":{"responseTime":"相应时间为0.01s"},"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36"}
+[2018-06-23T21:31:09.191] [INFO] c2 - mi-send
+[2018-06-23T21:31:09.198] [INFO] c2 - {"projectName":"koa2-tutorial","serverIp":"0.0.0.0","method":"GET","url":"/user/json","host":"localhost:3000","message":{"responseTime":"相应时间为0.013s"},"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36"}
+[2018-06-23T21:33:27.782] [INFO] c2 - mi-send
+[2018-06-23T21:33:27.788] [INFO] c2 - {"projectName":"koa2-tutorial","serverIp":"0.0.0.0","method":"GET","url":"/user/json","host":"localhost:3000","message":{"responseTime":"相应时间为0.012s"},"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36"}

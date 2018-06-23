@@ -1,4 +1,4 @@
 const logger = require('./logger')
-module.exports = () => {
-  return logger()
+module.exports = opt => {
+  return logger(opt)
 }

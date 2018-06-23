@@ -1,36 +1,50 @@
 const log4js = require('log4js')
-const ip = require('ip')
 const access = require('./access')
-
-log4js.configure({
-  appenders: {
-    c2: {
-      type: `dateFile`,
-      filename: `logs/task`,
-      pattern: '-yyyy-MM-dd.log',
-      alwaysIncludePattern: true
-    }
-  },
-  categories: {
-    default: {
-      appenders: ['c2'],
-      level: 'info'
-    }
-  }
-})
 
 const methods = ['track', 'debug', 'info', 'warn', 'error', 'fatal', 'mark']
 
 const commonInfo = {
+  logDir: 'logs',
+  appLogLevel: 'info',
+  env: 'dev',
   projectName: 'koa2-tutorial',
-  serverIp: ip.address()
+  serverIp: '0.0.0.0'
 }
 
 module.exports = option => {
   return async (ctx, next) => {
+    const opt = Object.assign({}, commonInfo, option || {})
+    console.log(option)
+    const { logDir, appLogLevel, env, projectName, serverIp } = opt
+    const appInfo = { projectName, serverIp }
     const contextLogger = {}
+    const appenders = {}
+
+    appenders.c2 = {
+      type: `dateFile`,
+      filename: `${logDir}/task`,
+      pattern: '-yyyy-MM-dd.log',
+      alwaysIncludePattern: true
+    }
+
+    if (env == 'dev' || env == 'local') {
+      appenders.out = {
+        type: 'console'
+      }
+    }
+
+    const config = {
+      appenders,
+      categories: {
+        default: {
+          appenders: Object.keys(appenders),
+          level: 'info'
+        }
+      }
+    }
+
+    log4js.configure(config)
     const logger = log4js.getLogger('c2')
-    const startDate = new Date()
 
     methods.forEach((method, i) => {
       contextLogger[method] = message => {
@@ -40,6 +54,7 @@ module.exports = option => {
 
     ctx.log = contextLogger
 
+    const startDate = new Date()
     await next()
     const endDate = new Date()
     const resTime = endDate - startDate
@@ -49,7 +64,7 @@ module.exports = option => {
         {
           responseTime: `相应时间为${resTime / 1000}s`
         },
-        commonInfo
+        appInfo
       )
     )
   }
