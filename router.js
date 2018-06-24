@@ -1,18 +1,17 @@
 const Router = require('koa-router')
-const userController = require('./controller/user')
 const userRouter = new Router({
   prefix: '/user'
 })
 module.exports = app => {
-  userRouter.get('/', userController.index)
-  userRouter.get('/login', userController.login)
-  userRouter.get('/json', userController.json)
+  userRouter.get('/', app.controller.user.index)
+  userRouter.get('/login', app.controller.user.login)
+  userRouter.get('/json', app.controller.user.json)
 
-  userRouter.get('/:id/posts', userController.postsParams)
+  userRouter.get('/:id/posts', app.controller.user.postsParams)
 
-  userRouter.post('/register', userController.register)
+  userRouter.post('/register', app.controller.user.register)
 
-  userRouter.get('/404', userController.notFound)
+  userRouter.get('/404', app.controller.user.notFound)
 
   app.use(userRouter.routes()).use(userRouter.allowedMethods())
 }

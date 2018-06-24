@@ -6,8 +6,23 @@ const staticFile = require('koa-static')
 const miSend = require('./mi-send')
 const miLog = require('./mi-log')
 const httpError = require('./mi-http-error')
+const miRule = require('./mi-rule')
 // console.log(path.join(__dirname, '../views'))
 module.exports = app => {
+  miRule({
+    app,
+    rules: [
+      {
+        name: 'controller',
+        folder: path.join(__dirname, '../controller')
+      },
+      {
+        name: 'service',
+        folder: path.join(__dirname, '../service')
+      }
+    ]
+  })
+
   app.use(
     httpError({
       errorPageFolder: path.resolve(__dirname, '../errorPage')

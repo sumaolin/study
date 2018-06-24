@@ -1,4 +1,3 @@
-const userService = require('../service/user')
 module.exports = {
   index: async (ctx, next) => {
     console.log(ctx.request.path)
@@ -23,7 +22,7 @@ module.exports = {
   },
   register: async (ctx, next) => {
     let { name, password } = ctx.request.body
-    const resData = await userService.login(name, password)
+    const resData = await ctx.service.user.login(name, password)
     if (resData.status == '-1') {
       await ctx.render('user/login', resData.data)
     } else {
