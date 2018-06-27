@@ -34,5 +34,8 @@
     "conventional-changelog": {
       "path": "./node_modules/conventional-changelog"
     }
+  },
+  "dependencies": {
+    "koa": "^2.5.1"
   }
 }
