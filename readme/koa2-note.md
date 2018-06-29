@@ -35,3 +35,9 @@ route.use('/user', user.routes(), user.allowAllMethods()) // '/user' 是prefix �
 
 1. `walk.js` 中 `fs.readdirSync()` 写成了 `fs.readFileSync()` ，报错， [API](http://nodejs.cn/api/fs.html)
 2. `Array.entries()` 的 [API](http://www.runoob.com/jsref/jsref-entries.html) 
+
+
+
+5. [cookie/session](https://chenshenhai.github.io/koa2-note/note/cookie/info.html) 
+
+   cookie设置的时候domain 没写正确，没看到相应的cookie
