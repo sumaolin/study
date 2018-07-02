@@ -38,6 +38,9 @@ route.use('/user', user.routes(), user.allowAllMethods()) // '/user' 是prefix �
 
 
 
-5. [cookie/session](https://chenshenhai.github.io/koa2-note/note/cookie/info.html) 
 
-   cookie设置的时候domain 没写正确，没看到相应的cookie
+
+5. [cookie/session](https://chenshenhai.github.io/koa2-note/note/cookie/info.html) 
+   1. cookie设置的时候domain 没写正确，没看到相应的cookie
+   2. `Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'`   错误是因为expires 字段值必须为int类型，不能是字符串类型，expires 和 maxAge 字段的值写反了造成的
+   3. `_mysql_session_store`  为 koa-mysql-session 默认的session生成的table 。数据库sesion_demo 必须手动创建
