@@ -42,5 +42,27 @@ route.use('/user', user.routes(), user.allowAllMethods()) // '/user' 是prefix �
 
 5. [cookie/session](https://chenshenhai.github.io/koa2-note/note/cookie/info.html) 
    1. cookie设置的时候domain 没写正确，没看到相应的cookie
+
    2. `Error: ER_BAD_FIELD_ERROR: Unknown column 'NaN' in 'field list'`   错误是因为expires 字段值必须为int类型，不能是字符串类型，expires 和 maxAge 字段的值写反了造成的
+
    3. `_mysql_session_store`  为 koa-mysql-session 默认的session生成的table 。数据库sesion_demo 必须手动创建
+
+   4. mac下启动mysql `mysql.server start`   ;   `mysql.server stop`  停止Mysql
+
+   5. mac修改Mysql root密码: ` mysqladmin -u root -p password 123465 ` 进行修改可以通过 `mysql -u root -p session_demo进行连接登陆，需要输入密码的
+
+   6. ```js
+      app.use(
+        session({
+          key: 'SESSION_ID',  // cookie中key：value中key为的值；_mysql_session_store 数据表中id值为key：value的组合值
+          cookie: cookie,
+          store: store
+        })
+      )
+
+      ctx.sesion = {
+          user_id: 13324,
+          count: 2
+      } //是设置在 _mysql_session_store table中data的值
+      ```
+
