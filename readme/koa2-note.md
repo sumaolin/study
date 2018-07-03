@@ -66,3 +66,17 @@ route.use('/user', user.routes(), user.allowAllMethods()) // '/user' 是prefix �
       } //是设置在 _mysql_session_store table中data的值
       ```
 
+
+
+
+### 2018.07.03
+
+1. [模板引擎](https://chenshenhai.github.io/koa2-note/note/template/add.html) 
+
+   > package `koa-views`  & `ejs` 
+
+
+
+2. [文件上传](https://chenshenhai.github.io/koa2-note/note/upload/busboy.html) 
+
++ node [util.inspect](https://www.zhihu.com/question/34776469#answer-27551087) 的用法
