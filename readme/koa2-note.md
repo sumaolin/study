@@ -109,4 +109,19 @@ Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual th
 
 * `demo1.js` 报错： `TypeError: connection.release is not a function`  ，因为没有使用连接池时候结束connection时用 `connection.end()`，`connection.release()` 是释放到连接池中
 
-  ​
+
+
+* demo4.js 中报错：
+
+```shell
+(node:13172) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'JSON DEFAULT NULL,
+  `create_time` varchar(20) DEFAULT NULL,
+  `modified_time` v' at line 3
+(node:13172) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+```
+
+引起原因：  `data_info JSON DEFAULT NULL` 中的 JSON数据类型
+
+> mysql自5.7.8版本开始，就支持了json结构的数据存储和查询 
+
+我window上的是 `5.6.21 - MySQL Community Server (GPL)` 看来是不支持了，回家试下最新的版本是否支持
