@@ -125,3 +125,9 @@ Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual th
 > mysql自5.7.8版本开始，就支持了json结构的数据存储和查询 
 
 我window上的是 `5.6.21 - MySQL Community Server (GPL)` 看来是不支持了，回家试下最新的版本是否支持
+
+
+
+
+
+2. [JSONP实现](https://chenshenhai.github.io/koa2-note/note/jsonp/koa-jsonp.html) 
