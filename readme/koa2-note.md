@@ -80,3 +80,33 @@ route.use('/user', user.routes(), user.allowAllMethods()) // '/user' 是prefix �
 2. [文件上传](https://chenshenhai.github.io/koa2-note/note/upload/busboy.html) 
 
 + node [util.inspect](https://www.zhihu.com/question/34776469#answer-27551087) 的用法
+
+
+
+
+
+### 2018.07.11
+
+1. [数据库mysql](https://chenshenhai.github.io/koa2-note/note/mysql/info.html)
+
+* 在 第一demo中 报错：
+
+```bash
+ throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near SELECT * FROM _mysql_session_store' at line 1
+    at Query.Sequence._packetToError (F:\gitDev\study\node_modules\mysql\lib\protocol\sequences\Sequence.js:52:14)
+```
+
+在Mac下没看出来的
+
+```sql
+'SELECT * FROM _mysql_session_store'
+```
+
+前面多了个点，去掉就可以了
+
+* `demo1.js` 报错： `TypeError: connection.release is not a function`  ，因为没有使用连接池时候结束connection时用 `connection.end()`，`connection.release()` 是释放到连接池中
+
+  ​

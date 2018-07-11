@@ -7,11 +7,13 @@ const connection = mysql.createConnection({
 })
 
 connection.query(
-  'SELECT * FROM _mysql_session_store',
+  'SELECT * FROM _mysql_session_store',
   (error, results, fields) => {
     if (error) throw error
     console.log(results)
     console.log(fields)
-    connection.release()
+    // console.log(connection)
+    // connection.release()
   }
 )
+connection.end()
