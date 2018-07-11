@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/sumaolin/study#readme",
   "devDependencies": {
-    "commitizen": "^2.9.6",
+    "commitizen": "^2.10.1",
     "conventional-changelog": "^1.1.24",
     "cz-conventional-changelog": "^2.1.0",
     "nodemon": "^1.17.5"
@@ -44,6 +44,7 @@
     "koa-router": "^7.4.0",
     "koa-session-minimal": "^3.0.4",
     "koa-static": "^5.0.0",
-    "koa-views": "^6.1.4"
+    "koa-views": "^6.1.4",
+    "mysql": "^2.15.0"
   }
 }
