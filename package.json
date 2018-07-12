@@ -22,10 +22,13 @@
   },
   "homepage": "https://github.com/sumaolin/study#readme",
   "devDependencies": {
+    "chai": "^4.1.2",
     "commitizen": "^2.10.1",
     "conventional-changelog": "^1.1.24",
     "cz-conventional-changelog": "^2.1.0",
-    "nodemon": "^1.17.5"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5",
+    "supertest": "^3.1.0"
   },
   "config": {
     "commitizen": {

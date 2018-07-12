@@ -131,3 +131,17 @@ Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual th
 
 
 2. [JSONP实现](https://chenshenhai.github.io/koa2-note/note/jsonp/koa-jsonp.html) 
+
+
+
+
+
+### 2018.07.12
+
+10. [单元测试](https://chenshenhai.github.io/koa2-note/note/test/unit.html) 
+
+报错： `1) Uncaught error outside test suite` ， 是因为 app调用了两次的原因，测试的时候demo不需要启动，参考： [mocha watching fails under npm](https://stackoverflow.com/questions/32868692/mocha-watching-fails-under-npm) 
+
+
+
+报错： `Uncaught AssertionError: expected true to be a boolen`  ，手残boolean写错了！
