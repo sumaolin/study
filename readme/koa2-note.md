@@ -145,3 +145,20 @@ Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual th
 
 
 报错： `Uncaught AssertionError: expected true to be a boolen`  ，手残boolean写错了！
+
+
+
+
+
+### 2018.07.13
+
+12. [项目框架设计](https://chenshenhai.github.io/koa2-note/note/project/framework.html) 
+
+> 结合react 实现用户注册，登录功能！
+
+
+
+先使用 react antd-UI进行页面的构建，想到以前的 [Rekit](http://rekit.js.org/) 工具使用更快捷写
+
+参考： [Rekit 2.0 构建基于React+Redux+React-router的可扩展Web应用](https://www.jianshu.com/p/fe89870007fc)  一下午看这篇文章了，挺长的
+
