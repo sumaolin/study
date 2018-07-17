@@ -20,11 +20,15 @@ const user = {
   },
 
   async getOneByUserNameAndPassword(options) {
-    let _sql = `select * from user_info where password="${
+    //  *  `user_info` WHERE password="123456" and name="sumaolin" limit 1
+    let _sql = `SELECT * FROM user_info where password="${
       options.password
-    }" and name="${options.name} limit 1"`
+    }" and name="${options.name}" limit 1`
 
+    console.log(_sql)
     const result = await dbUtils.query(_sql)
+    console.log(result)
+
     if (Array.isArray(result) && result.length > 0) {
       return result[0]
     } else {

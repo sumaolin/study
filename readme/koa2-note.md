@@ -160,5 +160,8 @@ Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual th
 
 先使用 react antd-UI进行页面的构建，想到以前的 [Rekit](http://rekit.js.org/) 工具使用更快捷写
 
-参考： [Rekit 2.0 构建基于React+Redux+React-router的可扩展Web应用](https://www.jianshu.com/p/fe89870007fc)  一下午看这篇文章了，挺长的
+参考：
 
+1. [Rekit 2.0 构建基于React+Redux+React-router的可扩展Web应用](https://www.jianshu.com/p/fe89870007fc)  一下午看这篇文章了，挺长的
+2. [精读《Rekit Studio》](https://zhuanlan.zhihu.com/p/33853805) 关于rekit工具设计的一些感想
+3. [Introducing Rekit Studio: a real IDE for React and Redux development](https://medium.freecodecamp.org/introducing-rekit-studio-a-real-ide-for-react-and-redux-development-baf0c99cb542) 

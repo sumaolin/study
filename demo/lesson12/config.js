@@ -7,3 +7,5 @@ const config = {
     DATABASE: 'koa_demo'
   }
 }
+
+module.exports = config
