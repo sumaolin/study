@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
-import { Input, Icon } from 'antd';
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
+
+const FormItem = Form.Item;
 
 export class DefaultPage extends Component {
   static propTypes = {
@@ -11,13 +13,45 @@ export class DefaultPage extends Component {
     actions: PropTypes.object.isRequired,
   };
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        console.log('Received values of form: ', values);
+      }
+    });
+  }
+
   render() {
+    const { getFieldDecorator } = this.props.form;
     return (
       <div className="sign-in-default-page">
         登录页面
         <div className="form-wrap">
-          <Input addonBefore={<Icon type="user" />} />
-          <Input addonBefore={<Icon type="key" />} />
+          <Form onSubmit={this.handleSubmit.bind(this)} className="login-form">
+            <FormItem>
+              {getFieldDecorator('userName', {
+                rules: [{ required: true, message: 'Please input your username!' }],
+              })(<Input addonBefore={<Icon type="user" />} placeholder="Username" />)}
+            </FormItem>
+            <FormItem>
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: 'Please input your Password!' }],
+              })(
+                <Input addonBefore={<Icon type="key" />} type="password" placeholder="Password" />,
+              )}
+            </FormItem>
+            <FormItem>
+              {getFieldDecorator('remember', {
+                valuePropName: 'checked',
+                initialValue: true,
+              })(<Checkbox>Remember me</Checkbox>)}
+            </FormItem>
+
+            <Button type="primary" htmlType="submit" className="login-form-button">
+              Log in
+            </Button>
+          </Form>
         </div>
       </div>
     );
@@ -38,7 +72,9 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
+const WrapFormDP = Form.create()(DefaultPage);
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(DefaultPage);
+)(WrapFormDP);
