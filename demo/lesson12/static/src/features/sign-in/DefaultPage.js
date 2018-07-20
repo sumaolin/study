@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Checkbox, notification } from 'antd';
 
 const FormItem = Form.Item;
 
@@ -14,19 +14,39 @@ export class DefaultPage extends Component {
   };
 
   handleSubmit(e) {
+    const { actions } = this.props;
+    const { showNotification } = this;
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        // console.log('Received values of form: ', values);
+        actions.postSignIn(values).then(function(res) {
+          showNotification(res.data);
+        });
       }
     });
   }
 
+  showNotification(data) {
+    if (data.success) {
+      notification.success({
+        message: 'Login Success',
+      });
+    } else {
+      if (data.message !== '') {
+        notification.error({
+          message: data.message,
+        });
+      }
+    }
+  }
+
   render() {
+    const { postSignInPending } = this.props.signIn;
     const { getFieldDecorator } = this.props.form;
+
     return (
       <div className="sign-in-default-page">
-        登录页面
         <div className="form-wrap">
           <Form onSubmit={this.handleSubmit.bind(this)} className="login-form">
             <FormItem>
@@ -47,10 +67,16 @@ export class DefaultPage extends Component {
                 initialValue: true,
               })(<Checkbox>Remember me</Checkbox>)}
             </FormItem>
-
-            <Button type="primary" htmlType="submit" className="login-form-button">
-              Log in
-            </Button>
+            <div className="btn-wrap">
+              <Button
+                type="primary"
+                htmlType="submit"
+                className="login-form-button"
+                loading={postSignInPending}
+              >
+                Log in
+              </Button>
+            </div>
           </Form>
         </div>
       </div>
