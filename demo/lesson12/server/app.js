@@ -7,6 +7,7 @@ const session = require('koa-session-minimal')
 const mysqlStore = require('koa-mysql-session')
 const convert = require('koa-convert')
 const logger = require('koa-logger')
+const cors = require('koa-cors')
 // user
 const config = require('./../config')
 const routers = require('./routers')
@@ -20,6 +21,11 @@ const sessionMysqlConfig = {
 
 const app = new koa()
 
+app.use(
+  cors({
+    origin: 'http://localhost:6075'
+  })
+)
 app.use(
   session({
     key: 'USER_SID',
