@@ -32,9 +32,11 @@ function creatTable(sql) {
   return query(sql, [])
 }
 
-function insertData(table, value) {
+function insertData(table, values) {
+  // console.log('insertData')
+  // console.log(values)
   let _sql = 'INSERT INTO ?? SET ?'
-  return query(_sql, [table, value])
+  return query(_sql, [table, values])
 }
 
 function select(table, keys) {
