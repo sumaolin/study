@@ -153,15 +153,16 @@ export class DefaultPage extends Component {
               <Input {...nameProps} placeholder="用户名" />
             </FormItem>
 
-            <FormItem {...formItemLayout} label="邮箱" hasFeedback>
-              <Input {...emailProps} type="email" placeholder="邮箱" />
+            <FormItem {...formItemLayout} label="邮 箱" hasFeedback>
+              <Input {...emailProps} type="email" placeholder="邮 箱" />
             </FormItem>
 
-            <FormItem {...formItemLayout} label="密码" hasFeedback>
+            <FormItem {...formItemLayout} label="密 码" hasFeedback>
               <Input
                 {...passwdProps}
                 type="password"
                 autoComplete="off"
+                placeholder="密 码"
                 onContextMenu={this.handleCPCC.bind(this)}
                 onPaste={this.handleCPCC.bind(this)}
                 onCopy={this.handleCPCC.bind(this)}

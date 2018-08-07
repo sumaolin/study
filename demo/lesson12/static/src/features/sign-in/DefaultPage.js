@@ -21,6 +21,7 @@ export class DefaultPage extends Component {
       if (!err) {
         // console.log('Received values of form: ', values);
         actions.postSignIn(values).then(function(res) {
+          // window.location.href = '/workspace';
           showNotification(res.data);
         });
       }
@@ -52,20 +53,18 @@ export class DefaultPage extends Component {
             <FormItem>
               {getFieldDecorator('userName', {
                 rules: [{ required: true, message: 'Please input your username!' }],
-              })(<Input addonBefore={<Icon type="user" />} placeholder="Username" />)}
+              })(<Input addonBefore={<Icon type="user" />} placeholder="用户名" />)}
             </FormItem>
             <FormItem>
               {getFieldDecorator('password', {
                 rules: [{ required: true, message: 'Please input your Password!' }],
-              })(
-                <Input addonBefore={<Icon type="key" />} type="password" placeholder="Password" />,
-              )}
+              })(<Input addonBefore={<Icon type="key" />} type="password" placeholder="密 码" />)}
             </FormItem>
             <FormItem>
               {getFieldDecorator('remember', {
                 valuePropName: 'checked',
                 initialValue: true,
-              })(<Checkbox>Remember me</Checkbox>)}
+              })(<Checkbox>记录登录信息</Checkbox>)}
             </FormItem>
             <div className="btn-wrap">
               <Button
@@ -74,7 +73,7 @@ export class DefaultPage extends Component {
                 className="login-form-button"
                 loading={postSignInPending}
               >
-                Log in
+                登 录
               </Button>
             </div>
           </Form>
