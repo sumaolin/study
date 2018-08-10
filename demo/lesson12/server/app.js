@@ -35,9 +35,9 @@ app.use(
 
 app.use(convert(logger()))
 app.use(bodyParser())
-app.use(convert(static(path.join(__dirname, './../static'))))
+app.use(convert(static(path.join(__dirname, './../static/build'))))
 app.use(
-  views(path.join(__dirname, './views'), {
+  views(path.join(__dirname, './../static/build'), {
     extension: 'ejs'
   })
 )

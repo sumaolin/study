@@ -179,3 +179,61 @@ Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual th
 #### Question
 
 使用Rekit生成的项目使用了react-router，所以路由要有前端控制了，和后端的koa-router有些冲突，想下怎么解决？
+
+
+
+解决问题时候参考的 []()  安装依赖时候报错：
+
+```bash
+MSBUILD : error MSB3428: 未能加载 Visual C++ 组件“VCBuild.exe”
+```
+
+通过`npm install --global --production windows-build-tools`  by admin权限运行后解决了，后面的报错信息改为了：
+
+```bash
+F:\gitDev\jackblog-api-koa\node_modules\hiredis\build\deps\hiredis-c.vcxproj(20,3): error MSB4019: 未找到导入的项目“F:\M
+icrosof
+t.Cpp.Default.props”。请确认 <Import> 声明中的路径正确，且磁盘上存在该文件。
+```
+
+### 2018.08.10
+
+#### Question
+
+使用Rekit生成的项目使用了react-router，所以路由要有前端控制了，和后端的koa-router有些冲突，想下怎么解决？
+
+#### Fixed
+
+参考文章： [服务端渲染(Universal/Isomorphic) 之 React (上)](http://react-china.org/t/universal-isomorphic-react/4997) 关键的两点
+
+1. 后端的路由和前端的路由是各自控制的，还好前端控制的路由和后端的路径没有重合的，对于后端路由是提供API用的，匹配不上的一律返回`index.ejs` 页面，代码：
+
+   ```js
+   allRouter.get('/*', async (ctx, next) => { // 根据中间件原理，这个应该路由配置的最后面
+     await ctx.render('index')
+   })
+   ```
+
+2. 前端不用太大的改动，只是`webpack.config.prod.js` 中 `HtmlWebpackPlugin` 的配置中，把生成文件的html，变为ejs后缀
+
+   ```
+   new HtmlWebpackPlugin({
+         inject: true,
+         template: paths.appHtml,
+         filename: 'index.ejs',  // 添加的修改
+         minify: {
+           removeComments: true,
+           collapseWhitespace: true,
+           removeRedundantAttributes: true,
+           useShortDoctype: true,
+           removeEmptyAttributes: true,
+           removeStyleLinkTypeAttributes: true,
+           keepClosingSlash: true,
+           minifyJS: true,
+           minifyCSS: true,
+           minifyURLs: true,
+         },
+       }),
+   ```
+
+上面就解决了前后端路由冲突的问题
