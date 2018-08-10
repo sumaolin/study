@@ -26,7 +26,7 @@ export function signUp(args = {}) {
       console.log('request');
       console.log(args);
 
-      const doRequest = axios.post('http://localhost:3001/api/user/signUp', args);
+      const doRequest = axios.post('/api/user/signUp', args);
       doRequest.then(
         res => {
           dispatch({

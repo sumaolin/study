@@ -14,6 +14,7 @@ module.exports = {
     console.log(formData)
 
     const userResult = await userService.signIn(formData)
+    console.log(userResult)
     if (userResult) {
       if (userResult.name === formData.userName) {
         result.success = true
@@ -27,12 +28,15 @@ module.exports = {
     }
 
     // session
-    if (formData.source === 'form' && result.success === true) {
+    if (result.success === true) {
       let session = ctx.session
       session.isLogin = true
       session.userName = userResult.name
       session.userId = userResult.id
-      ctx.redirect('/work')
+
+      console.log('session')
+      console.log(ctx.session)
+      ctx.redirect('/workspace')
     } else {
       ctx.body = result
     }
@@ -86,5 +90,16 @@ module.exports = {
       result.message = userCode.ERROR_SYS
     }
     ctx.body = result
+  },
+
+  async requireLogin(ctx) {
+    console.log(ctx.session)
+    if (ctx.session && ctx.session.isLogin && ctx.session.userName) {
+      console.log('login')
+    } else {
+      // 没有登录态则跳转到登录页面
+      console.log('没有登录态')
+      return ctx.redirect('/user')
+    }
   }
 }

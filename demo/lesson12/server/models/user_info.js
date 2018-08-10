@@ -25,9 +25,9 @@ const user = {
       options.password
     }" and name="${options.name}" limit 1`
 
-    console.log(_sql)
+    // console.log(_sql)
     const result = await dbUtils.query(_sql)
-    console.log(result)
+    // console.log(result)
 
     if (Array.isArray(result) && result.length > 0) {
       return result[0]

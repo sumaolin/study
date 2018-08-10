@@ -198,7 +198,7 @@ t.Cpp.Default.props”。请确认 <Import> 声明中的路径正确，且磁盘
 
 ### 2018.08.10
 
-#### Question
+#### Question：前后端路由冲突
 
 使用Rekit生成的项目使用了react-router，所以路由要有前端控制了，和后端的koa-router有些冲突，想下怎么解决？
 
@@ -237,3 +237,9 @@ t.Cpp.Default.props”。请确认 <Import> 声明中的路径正确，且磁盘
    ```
 
 上面就解决了前后端路由冲突的问题
+
+
+
+#### Question： session登录态判断处理
+
+课程：[12.9 session登录态判断处理](https://chenshenhai.github.io/koa2-note/note/project/session.html) 

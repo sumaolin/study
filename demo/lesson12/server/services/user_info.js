@@ -23,7 +23,7 @@ const user = {
       name: formData.userName
     })
 
-    console.log(result)
+    // console.log(result)
 
     return result
   },

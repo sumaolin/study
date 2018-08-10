@@ -24,7 +24,7 @@ export function postSignIn(args = {}) {
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
       console.log(args);
-      const doRequest = Axios.post('http://localhost:3001/api/user/signIn', args);
+      const doRequest = Axios.post('/api/user/signIn', args);
       doRequest.then(
         res => {
           dispatch({
