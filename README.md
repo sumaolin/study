@@ -33,3 +33,15 @@ Branch：[koa2](https://github.com/sumaolin/study/tree/koa2)
 Branch：[koa2-note](https://github.com/sumaolin/study/tree/koa2-note)
 
 状态：已完成
+
+
+
+### 3. koa-webuploader
+
+#### 百度FEX 开发的 [webuploader](https://github.com/fex-team/webuploader) It's a new file uploader solution! 
+
+> 特点： 分片、并发；预览、压缩；多途径添加文件（支持文件多选，类型过滤，拖拽(文件&文件夹)，图片粘贴功能）；HTML5 & FLASH； MD5秒传。
+
+Branch：[koa-webuploader]()
+
+Status：开发学习……
