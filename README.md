@@ -32,4 +32,4 @@ Branch：[koa2](https://github.com/sumaolin/study/tree/koa2)
 
 Branch：[koa2-note](https://github.com/sumaolin/study/tree/koa2-note)
 
-状态：学习中……
+状态：已完成
