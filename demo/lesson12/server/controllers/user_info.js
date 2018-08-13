@@ -34,9 +34,11 @@ module.exports = {
       session.userName = userResult.name
       session.userId = userResult.id
 
-      console.log('session')
-      console.log(ctx.session)
-      ctx.redirect('/workspace')
+      // console.log('session')
+      // console.log(ctx.session)
+      // ctx.redirect('/workspace')
+
+      ctx.body = result
     } else {
       ctx.body = result
     }

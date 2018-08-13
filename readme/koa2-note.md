@@ -243,3 +243,20 @@ t.Cpp.Default.props”。请确认 <Import> 声明中的路径正确，且磁盘
 #### Question： session登录态判断处理
 
 课程：[12.9 session登录态判断处理](https://chenshenhai.github.io/koa2-note/note/project/session.html) 
+
+ [Request.credentials](https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials) 的 理解加深 by : [koa 无法将cookie写入到客户端](https://segmentfault.com/q/1010000007435062?_ea=1354667)  
+
+
+
+#### Fixed
+
+koa API 继续返回正常的signIn数据，react前端登录成功后跳转`/workspace` 下，登录权限有koa后端通过session进行校验 
+
+1. koa server 把登录router `/user`  不进行登录权限校验，直接返回index
+2. react static 中把不用的example去掉，默认`/` 直接加载 Feature User
+
+
+
+### 总结 （2018.08.13）
+
+前面的容易，持续几天完成了，最后一章实践了，没按原来的代码走，使用了新的脚手架 [Rekit](http://rekit.js.org/) ，而且对session与cookie关系理解不到位，遇到了些坑！今天才完工，实现了登录，注册以及登录状态的校验功能（基本的校验）！

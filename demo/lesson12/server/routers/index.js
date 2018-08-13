@@ -6,12 +6,13 @@ const apiR = require('./api')
 const allRouter = new router()
 
 allRouter.use('/api', apiR.routes(), apiR.allowedMethods())
-allRouter.get('/user', async ctx => {
-  await ctx.render('index')
-})
 allRouter.all('/*', async ctx => {
+  console.log('allrouter * url: ' + ctx.url)
+  if (ctx.url === '/user') {
+  } else {
+    userInfoController.requireLogin(ctx)
+  }
   await ctx.render('index')
-  userInfoController.requireLogin(ctx)
 })
 
 module.exports = allRouter

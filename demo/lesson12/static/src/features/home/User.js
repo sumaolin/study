@@ -16,12 +16,7 @@ export default class User extends Component {
   render() {
     return (
       <div className="home-user">
-        <Tabs
-          defaultActiveKey="1"
-          size="large"
-          type="card"
-          onChange={this.handleTabTileChange.bind(this)}
-        >
+        <Tabs defaultActiveKey="1" type="card" onChange={this.handleTabTileChange.bind(this)}>
           <TabPane tab="登 录" key="1">
             <SignIn />
           </TabPane>

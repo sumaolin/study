@@ -1,4 +1,4 @@
-import { DefaultPage, User } from './';
+import { User } from './';
 
 export default {
   path: '/',
@@ -7,7 +7,7 @@ export default {
     {
       path: 'default-page',
       name: 'Default page',
-      component: DefaultPage,
+      component: User,
       isIndex: true,
     },
     { path: 'user', name: 'User', component: User },

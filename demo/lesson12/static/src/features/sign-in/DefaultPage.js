@@ -21,7 +21,7 @@ export class DefaultPage extends Component {
       if (!err) {
         // console.log('Received values of form: ', values);
         actions.postSignIn(values).then(function(res) {
-          // window.location.href = '/workspace';
+          window.location.href = '/workspace';
           showNotification(res.data);
         });
       }
