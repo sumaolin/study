@@ -18,7 +18,7 @@
 
 1. [session & cookie](https://chenshenhai.github.io/koa2-note/note/cookie/info.html)
 2. [koa-jsonp中间件](https://github.com/ChenShenhai/koa2-note/blob/master/note/jsonp/koa-jsonp.md) jsonp 实现
-3. [busboy模块](https://github.com/ChenShenhai/koa2-note/blob/master/note/upload/busboy.md) 上传文件
+3. [busboy模块](https://github.com/ChenShenhai/koa2-note/blob/master/note/upload/busboy.md) 上传文件 [busboy](https://www.npmjs.com/package/busboy) 
 4. [MySQL 建表初始化](https://chenshenhai.github.io/koa2-note/note/mysql/init.html) 
 
 
@@ -61,8 +61,25 @@
 
 #### 上传
 
-1. [Koa2 之文件上传下载](https://github.com/lin-xin/blog/issues/25) 
+1. [Koa2 之文件上传下载](https://github.com/lin-xin/blog/issues/25) 已读
+
+   > [koa-body](https://www.npmjs.com/package/koa-body) 处理上传
+   >
+   > [koa-send](https://www.npmjs.com/package/koa-send) 处理下载功能
+
 2. [Node.js如何解析Form上传？](https://github.com/sumaolin/ebook/blob/master/md/Node.js%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90Form%E4%B8%8A%E4%BC%A0%EF%BC%9F.md) 
+
 3. [node-formidable详解](https://github.com/sumaolin/ebook/blob/master/md/node-formidable%E8%AF%A6%E8%A7%A3.md)
 
- 
+4. [聊聊大文件上传.md](https://github.com/kazaff/me.kazaff.article/blob/master/%E8%81%8A%E8%81%8A%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.md) 
+
+5. [Nodejs文件上传](http://xieyufei.com/2017/09/25/Nodejs-File-Upload.html?nsukey=3LOBfwkk%2F385vE%2F3ah0OInlID7GqSbUftOC97tSZdoO1XNXiPuRbJsMDoRhEJRbXzBpqCva1jL61LBW0uM4SyApDmmpSTkpHZ8JbNKpR%2B9dUmZPdY2xR17WKzklv6vFzGnTcnMI1trbKzXcXXPeDbGwc8GaxCpmxNzhT6CcJZkQZZjxYybo5Hfd5TdPe%2FauoUPNUfsOpT5jQbsIeXoFqIQ%3D%3D) 
+
+6. [基于 ThinkJS 的文件上传（普通上传，文件预览，压缩上传，分片上传）](https://segmentfault.com/a/1190000012973541) 
+
+   > 基本的前端F2E操作和后端的实现
+
+7. [移动端 Web 传图](https://github.com/progrape/mobile-upload-demo/issues/1) 
+
+   > 前端的实现，配合koa后端实现
+
