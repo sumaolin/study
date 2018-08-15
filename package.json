@@ -12,7 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/sumaolin/study.git"
   },
-  "keywords": ["code"],
+  "keywords": [
+    "code"
+  ],
   "author": "sumaolin619@gmail.com",
   "license": "ISC",
   "bugs": {
@@ -31,5 +33,13 @@
     "conventional-changelog": {
       "path": "./node_modules/conventional-changelog"
     }
+  },
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "koa": "^2.5.2",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-view": "^2.1.1",
+    "log4js": "^3.0.5"
   }
 }
