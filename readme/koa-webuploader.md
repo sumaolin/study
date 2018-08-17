@@ -92,19 +92,23 @@
    >
    > demo中node实现报的问题通过 问题1解决
 
-5. [Nodejs文件上传](http://xieyufei.com/2017/09/25/Nodejs-File-Upload.html?nsukey=3LOBfwkk%2F385vE%2F3ah0OInlID7GqSbUftOC97tSZdoO1XNXiPuRbJsMDoRhEJRbXzBpqCva1jL61LBW0uM4SyApDmmpSTkpHZ8JbNKpR%2B9dUmZPdY2xR17WKzklv6vFzGnTcnMI1trbKzXcXXPeDbGwc8GaxCpmxNzhT6CcJZkQZZjxYybo5Hfd5TdPe%2FauoUPNUfsOpT5jQbsIeXoFqIQ%3D%3D) 
+5. [文件（图片）上传调研](https://github.com/fex-team/webuploader/blob/research/experiment/README.md) by webuploader
+
+6. [WebUploader Design](https://github.com/fex-team/webuploader/blob/research/design/README.md) & [**UML**](https://github.com/fex-team/webuploader/blob/research/design/UML.pdf)  by webuploader  
+
+7. [Nodejs文件上传](http://xieyufei.com/2017/09/25/Nodejs-File-Upload.html?nsukey=3LOBfwkk%2F385vE%2F3ah0OInlID7GqSbUftOC97tSZdoO1XNXiPuRbJsMDoRhEJRbXzBpqCva1jL61LBW0uM4SyApDmmpSTkpHZ8JbNKpR%2B9dUmZPdY2xR17WKzklv6vFzGnTcnMI1trbKzXcXXPeDbGwc8GaxCpmxNzhT6CcJZkQZZjxYybo5Hfd5TdPe%2FauoUPNUfsOpT5jQbsIeXoFqIQ%3D%3D) 
 
    > `multer`  基于 `busbuy` ，只能出来`multipart/form-data` 类型的表单数据
 
-6. [基于 ThinkJS 的文件上传（普通上传，文件预览，压缩上传，分片上传）](https://github.com/zhengqingxin/file-upload-demo) 
+8. [基于 ThinkJS 的文件上传（普通上传，文件预览，压缩上传，分片上传）](https://github.com/zhengqingxin/file-upload-demo) 
 
    > 基本的前端F2E操作和后端的实现，基础版实现
 
-7. [移动端 Web 传图](https://github.com/progrape/mobile-upload-demo/issues/1) 
+9. [移动端 Web 传图](https://github.com/progrape/mobile-upload-demo/issues/1) 
 
    > 前端的实现，配合koa后端简单实现
 
-8. [记一次项目总结](http://xieyufei.com/2017/03/29/Project-Summary.html) 
+10. [记一次项目总结](http://xieyufei.com/2017/03/29/Project-Summary.html) 
 
    > 文件类型过滤：
    >
