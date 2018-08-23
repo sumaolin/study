@@ -1,39 +1,6 @@
 # webuploader koa的server实现
 
-## 规划功能
-
-### 1. 总结上面两个教程
-
-#### [Node Koa2 实战](https://github.com/ikcamp/koa2-tutorial)
-
-1. [Log4js](https://github.com/nomiddlename/log4js-node) 日志插件
-2. [规范与部署](https://github.com/ikcamp/koa2-tutorial/tree/10-mi-rule) 
-3. [处理错误请求](https://github.com/ikcamp/koa2-tutorial/tree/9-mi-http-error)
-
-
-
-####  [Koa2进阶学习笔记](https://github.com/chenshenhai/koa2-note)
-
-1. [session & cookie](https://chenshenhai.github.io/koa2-note/note/cookie/info.html)
-2. [koa-jsonp中间件](https://github.com/ChenShenhai/koa2-note/blob/master/note/jsonp/koa-jsonp.md) jsonp 实现
-3. [busboy模块](https://github.com/ChenShenhai/koa2-note/blob/master/note/upload/busboy.md) 上传文件 [busboy](https://www.npmjs.com/package/busboy) 
-4. [MySQL 建表初始化](https://chenshenhai.github.io/koa2-note/note/mysql/init.html) 
-
-
-
-#### 两个课程公用的Feature
-
-1. koa-router
-2. koa-static
-3. koa-bodyparser 解析表单数据
-4. koa-view（ejs| nunjucks）
-5. mvc（models | controllers | services ）
-
-
-
-把上面的有点集中下，写个脚手架bootstrap
-
-### 2. koa-webuploader
+## Feature
 
 #### 百度FEX 开发的 [webuploader](https://github.com/fex-team/webuploader) It's a new file uploader solution!
 
@@ -53,20 +20,7 @@
 
 
 
-
-## 问题
-
-1. `DeprecationWarning: Calling an asynchronous function without callback is deprecated.`
-
-   可以通过`node --trace-deprecation app.js`  或者 `node --throw-deprecation app.js`  引起警告的位置
-
-   参考： [DeprecationWarning: Calling an asynchronous function without callback is deprecated. - how to find where the “function:” is?](https://stackoverflow.com/questions/41195580/deprecationwarning-calling-an-asynchronous-function-without-callback-is-depreca) 
-
-
-
-
-
-## 参考资料
+## Reference
 
 #### 脚手架 bootstrap
 
@@ -172,3 +126,13 @@
 
 
 上面的问题记得自己也遇到过
+
+
+
+## Question
+
+1. [聊聊大文件上传.md](https://github.com/kazaff/me.kazaff.article/blob/master/%E8%81%8A%E8%81%8A%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.md) 中demo启动中遇到的报错：
+
+   `DeprecationWarning: Calling an asynchronous function without callback is deprecated.` 可以通过`node --trace-deprecation app.js`  或者 `node --throw-deprecation app.js`  引起警告的位置
+
+   参考： [DeprecationWarning: Calling an asynchronous function without callback is deprecated. - how to find where the “function:” is?](https://stackoverflow.com/questions/41195580/deprecationwarning-calling-an-asynchronous-function-without-callback-is-depreca) 

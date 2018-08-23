@@ -1,6 +1,6 @@
 # koa 启动框架
 
-## 规划
+## Feature
 
 ### 项目目录
 
@@ -25,10 +25,29 @@
 
 
 
+### 1. 总结上面两个教程
 
+#### [Node Koa2 实战](https://github.com/ikcamp/koa2-tutorial)
 
-## 进度
+- [ ] [Log4js](https://github.com/nomiddlename/log4js-node) 日志插件
+- [ ] [规范与部署](https://github.com/ikcamp/koa2-tutorial/tree/10-mi-rule) 
+- [ ] [处理错误请求](https://github.com/ikcamp/koa2-tutorial/tree/9-mi-http-error)
 
-### 2018.08.16
+#### [Koa2进阶学习笔记](https://github.com/chenshenhai/koa2-note)
 
-1. 公用的view，static，router
+- [ ] [session & cookie](https://chenshenhai.github.io/koa2-note/note/cookie/info.html)
+- [ ] [koa-jsonp中间件](https://github.com/ChenShenhai/koa2-note/blob/master/note/jsonp/koa-jsonp.md) jsonp 实现
+- [ ] [busboy模块](https://github.com/ChenShenhai/koa2-note/blob/master/note/upload/busboy.md) 上传文件 [busboy](https://www.npmjs.com/package/busboy) 
+- [ ] [MySQL 建表初始化](https://chenshenhai.github.io/koa2-note/note/mysql/init.html) 
+
+#### 两个课程公用的Feature
+
+- [x] koa-router
+- [x] koa-static
+- [x] koa-bodyparser 解析表单数据
+- [x] koa-view（ejs| nunjucks）
+- [ ] mvc（models | controllers | services ）
+- [ ] 把上面的有点集中下，写个脚手架bootstrap
+
+### 
+
