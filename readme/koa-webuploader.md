@@ -54,15 +54,22 @@
 
    > `multer`  基于 `busbuy` ，只能出来`multipart/form-data` 类型的表单数据
 
-8. [基于 ThinkJS 的文件上传（普通上传，文件预览，压缩上传，分片上传）](https://github.com/zhengqingxin/file-upload-demo) 
+8. [如何手写一款KOA的中间件来实现断点续传](https://www.cnblogs.com/cherryvenus/p/9577256.html)
+
+  > 1. HTML的form组件一共提供三种方式的编码方法：`application/x-www-form-urlencoded`(默认)、`multipart/form-data`、`text/plain`。前两种方式比较常见，最后一种不太用，也不推荐使用。前两种的区别就是默认的方法是无法上传`<input type="file"/>`的。所以如果我们需要上传文件，那么就一定要用`multipart/form-data`
+  > 2. `ctx.req`是KOA中封装的`request` 
+
+9. [基于 ThinkJS 的文件上传（普通上传，文件预览，压缩上传，分片上传）](https://github.com/zhengqingxin/file-upload-demo) 
 
    > 基本的前端F2E操作和后端的实现，基础版实现
 
-9. [移动端 Web 传图](https://github.com/progrape/mobile-upload-demo/issues/1) 
+10. [移动端 Web 传图](https://github.com/progrape/mobile-upload-demo/issues/1) 
 
    > 前端的实现，配合koa后端简单实现
 
-10. [记一次项目总结](http://xieyufei.com/2017/03/29/Project-Summary.html) 
+11. [使用Blob进行文件上传](https://segmentfault.com/a/1190000015852421) 
+
+12. [记一次项目总结](http://xieyufei.com/2017/03/29/Project-Summary.html) 
 
    > 文件类型过滤：
    >
