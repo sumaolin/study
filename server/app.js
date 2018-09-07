@@ -2,7 +2,7 @@ const path = require('path')
 const Koa = require('koa')
 const views = require('koa-view')
 const Static = require('koa-static')
-const bodyParse = require('koa-bodyparser')
+// const bodyParse = require('koa-bodyparser')
 // customer
 const middlewares = require('./middleware')
 const routers = require('./routers')
@@ -17,7 +17,7 @@ app.use(
   })
 )
 
-app.use(bodyParse())
+// app.use(bodyParse())
 
 app.use(routers.routes()).use(routers.allowedMethods())
 

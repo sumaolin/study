@@ -8,8 +8,7 @@ uploaderRouter
     await ctx.render('uploader')
   })
   .post('/file', async (ctx, next) => {
-    const uploadResult = await webuploader(ctx, next)
-    ctx.send(uploadResult)
+    webuploader(ctx, next)
   })
 
 module.exports = uploaderRouter

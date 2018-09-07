@@ -1,19 +1,23 @@
 const fs = require('fs')
 const path = require('path')
+const util = require('util')
 const formidable = require('formidable')
 const _ = require('underscore')
 const config = require('./config')
-const WU = require('./webuploader')
+const wu = require('./webuploader')
 /**
  * @param  {koa.ctx} ctx
  * @param  {koa.next} next
  */
-module.exports = async (ctx, next) => {
+module.exports = (ctx, next) => {
   var lockMark = [] //用于分片合并时的同步标识位
-  const form = new formidable.IncomingForm({ uploadDir: 'tmp' }) //避免EXDEV问题
-
+  const form = new formidable.IncomingForm({
+    uploadDir: 'tmp',
+    encoding: 'utf-8'
+  }) //避免EXDEV问题
   form.parse(ctx.req, function(err, fields, files) {
-    //console.log(util.inspect({fields: fields, files: files}));
+    // console.log(util.inspect({ fields: fields, files: files }))
+    console.log(fields)
     if (_.isUndefined(fields.status)) {
       //分片上传 传输文件
       //分片的元数据必须以文件的形式（当然数据库也行）持久化，而不应该持久化在node的全局变量中，避免node进程重启而导致的元数据丢失，这里处理的方式参照php版本的后端
@@ -81,7 +85,8 @@ module.exports = async (ctx, next) => {
       if (fields.md5 == 'b0201e4d41b2eeefc7d3d355a44c6f5a') {
         ctx.send('{"ifExist":1, "path":"kazaff2.jpg"}')
       } else {
-        ctx.send('{"ifExist":0}')
+        console.log('{"ifExist":0}')
+        ctx.send({ ifExist: 0 })
       }
     } else if (fields.status == 'chunkCheck') {
       //分片校验是否已传过，用于断点续传 WU.beforeSend

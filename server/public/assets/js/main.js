@@ -40,7 +40,7 @@
               dataType: 'json'
             }).then(
               function(data, textStatus, jqXHR) {
-                //console.log(data);
+                console.log(data);
 
                 if (data.ifExist) {
                   //若存在，这返回失败给WebUploader，表明该文件不需要上传
