@@ -9,8 +9,10 @@ const wu = require('./webuploader')
  * @param  {koa.ctx} ctx
  * @param  {koa.next} next
  */
-module.exports = (ctx, next) => {
+module.exports = async (ctx, next) => {
+  var uploadResult
   var lockMark = [] //用于分片合并时的同步标识位
+
   const form = new formidable.IncomingForm({
     uploadDir: 'tmp',
     encoding: 'utf-8'
@@ -22,7 +24,7 @@ module.exports = (ctx, next) => {
       //分片上传 传输文件
       //分片的元数据必须以文件的形式（当然数据库也行）持久化，而不应该持久化在node的全局变量中，避免node进程重启而导致的元数据丢失，这里处理的方式参照php版本的后端
       //具体详情可见https://github.com/kazaff/me.kazaff.article/blob/master/%E8%81%8A%E8%81%8A%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.md
-
+      console.log('传输文件')
       var upDir = ''
       var isChunks = !(
         _.isUndefined(fields.chunks) || parseInt(fields.chunks) <= 0
@@ -67,44 +69,47 @@ module.exports = (ctx, next) => {
             if (err) {
               //todo
               console.error(err)
-              ctx.send('{"status":0}')
-              return
+              uploadResult = { status: 0 }
             }
 
-            ctx.send('{"status":1, "path":' + newFileName + '}')
+            uploadResult = { status: 1, path: ' + newFileName + ' }
           })
         } else {
           //todo
           console.error(err)
-          ctx.send('{"status":0}')
+          uploadResult = { status: 0 }
         }
       })
     } else if (fields.status == 'md5Check') {
       //秒传校验 WU.beforeSendFile 生产的md5
       //todo 模拟去数据库中校验md5是否存在
+      console.log(`md5Check : ${fields.md5}`)
       if (fields.md5 == 'b0201e4d41b2eeefc7d3d355a44c6f5a') {
-        ctx.send('{"ifExist":1, "path":"kazaff2.jpg"}')
+        uploadResult = { ifExist: 1, path: 'kazaff2.jpg' }
       } else {
-        console.log('{"ifExist":0}')
-        ctx.send({ ifExist: 0 })
+        uploadResult = { ifExist: 0 }
       }
     } else if (fields.status == 'chunkCheck') {
       //分片校验是否已传过，用于断点续传 WU.beforeSend
+      console.log('chunkCheck')
+      console.dir(fields)
       fs.stat(
         path.join(config.uploadDir, fields.name, fields.chunkIndex),
         function(err, stats) {
           if (err || stats.size != fields.size) {
-            ctx.send('{"ifExist":0}')
+            uploadResult = { ifExist: 0 }
           } else {
-            ctx.send('{"ifExist":1}')
+            uploadResult = { ifExist: 1 }
           }
         }
       )
     } else if (fields.status == 'chunksMerge') {
       //分片合并 合并请求 WU.afterSendFile 发送完成后触发
       //同步机制
+      console.log('chunksMerge')
+      console.dir(fields)
       if (_.contains(lockMark, fields.name)) {
-        ctx.send('{"status":0}')
+        uploadResult = { status: 0 }
       } else {
         lockMark.push(fields.name)
 
@@ -120,7 +125,7 @@ module.exports = (ctx, next) => {
             if (err) {
               //todo
               console.error(err)
-              ctx.send('{"status":0}')
+              uploadResult = { status: 0 }
               return
             }
 
@@ -146,33 +151,13 @@ module.exports = (ctx, next) => {
 
               //todo 这里其实需要把该文件和其前端校验的md5保存在数据库中，供秒传功能检索
 
-              ctx.send('{"status":1, "path":"' + newFileName + '"}')
+              uploadResult = { status: 1, path: "' + newFileName + '" }
             })
           }
         )
       }
     }
   })
-
-  return
-  // switch (status) {
-  //   // 秒传验证
-  //   case 'md5Check':
-  //     uInfo = {
-  //       ifExist: true,
-  //       md5: md5
-  //     }
-  //     break
-  //   // 分片验证是否已传过，用于断点续传 WU.beforeSend
-  //   case 'chunkCheck':
-  //     break
-  //   // 合并请求 WU.afterSendFile 发送完成后触发
-  //   case 'chunksMerge':
-  //     break
-  //   // 传输文件
-  //   default:
-  //     break
-  // }
-
-  return uInfo
+  ctx.wu = uploadResult
+  await next()
 }

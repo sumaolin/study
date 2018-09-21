@@ -63,4 +63,19 @@ Error: ENOENT: no such file or directory, mkdir 'F:\gitDev\study\uploads\a52b1bc
 
 
 
-### 2018.09.07
+### 2018.09.10
+
+1. [nodejs中__filename和__dirname的区别](https://www.cnblogs.com/shuizhongyueming/archive/2012/08/08/the-different-between-__filename-__dirname-in-nodeJs.html) 
+
+   > 可见`__filename`始终是用绝对路径显示一个文件的位置，而`__dirname`则是该文件所在目录的绝对路径
+
+
+
+### 2018.09.21
+
+#### Feature
+
+`webupload` 中间件需要设计成一个，有输入参数：`ctx` ，`next`  ； 和输出函数的中间件，定义标准输出结果，结果怎么处理让用户自己处理，输入中要定义用户要处理的事件：
+
+1. md5Check  // 秒传校验 WU.beforeSendFile 生产的md5  
+2. chunksMerge  //这里其实需要把该文件和其前端校验的md5保存在数据库中，供秒传功能检索 要配合已使用的
