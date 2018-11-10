@@ -77,3 +77,13 @@ Status：开发学习……
 **Branch**： 未确定
 
 **Status**：未开始
+
+
+
+### 6. Thinkjs框架入门
+
+教程是[Thinkjs官网](https://thinkjs.org/)
+
+**Branch**：[thinkjs-beginner](https://github.com/sumaolin/study/tree/thinkjs-beginner)
+
+**Status**：进行中……
