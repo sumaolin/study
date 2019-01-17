@@ -1,5 +1,58 @@
-# study
-学习新知识
+# TypeScript Beginner
+
+
+
+
+
+
+   
+
+## 课程进度
+
+### Lesson：[TypeScript 精通指南](https://nodelover.me/course/ts-basic) 
+
+> TypeScript 基础入门到登堂入室 ，相关的电子书： [TypeScript 精通指南](https://github.com/MiYogurt/nodelover-books/tree/master/typescript) 
+
+入门的视频课程，学习下吧，koa-webupload没思路了，感觉可以多线程开始学习了，多个分支学
+
+**Branch**： [ts-beginner](https://github.com/sumaolin/study/tree/ts-beginner) 
+
+**Status**：学习中……
+
+
+
+### Study docs
+
+1. [基础认知](./src/lesson1/lesson1.md)
+2. [基础类型](./src/lesson2/lesson2.md) 
+
+
+
+
+
+### thinks
+
+1. generator + promise  => koa 
+2. async + await => koa2
+3. proxy => vue?
+4. decorator => ioa
+
+
+
+
+
+
+## Reference
+
+### 系列教程
+
+1. [TypeScript 入门教程](https://ts.xcatliu.com/introduction/hello-typescript.html)
+2. [深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/) 
+3. [TypeScript 精通指南](https://nodelover.gitbook.io/typescript/) 
+4. [官网文档](https://www.tslang.cn/docs/handbook/basic-types.html) 
+5.  [《浅谈 TypeScript》](https://welearnmore.gitbook.io/typescript-book/) 
+
+
 
 
 
@@ -17,53 +70,4 @@
    >
    > 编辑器代码格式 editorConfig
 
-
    三者插件结合使用，达到onSave时候自动格式化成eslint风格的代码
-
-   ​
-
-## 课程
-
-### 1. [Node Koa2 实战](https://github.com/ikcamp/koa2-tutorial)
-
->  基于Koa2搭建Node.js实战项目教程
-
-Branch：[koa2](https://github.com/sumaolin/study/tree/koa2) 
-
-状态：已完成
-
-
-
-### 2. [Koa2进阶学习笔记](https://github.com/chenshenhai/koa2-note)
-
-> 进度99%，一本关于Koa.js v2.x的学习笔记
-
-Branch：[koa2-note](https://github.com/sumaolin/study/tree/koa2-note)
-
-状态：已完成
-
-
-
-### 3. koa-webuploader
-
-#### 百度FEX 开发的 [webuploader](https://github.com/fex-team/webuploader) It's a new file uploader solution! 
-
-> 特点： 分片、并发；预览、压缩；多途径添加文件（支持文件多选，类型过滤，拖拽(文件&文件夹)，图片粘贴功能）；HTML5 & FLASH； MD5秒传。
-
-Branch：[koa-webuploader]()
-
-Status：开发学习……
-
-
-
-### 4. TypeScript
-
-#### Lesson：[TypeScript 精通指南](https://nodelover.me/course/ts-basic) 
-
-> TypeScript 基础入门到登堂入室 ，相关的电子书： [TypeScript 精通指南](https://github.com/MiYogurt/nodelover-books/tree/master/typescript) 
-
-入门的视频课程，学习下吧，koa-webupload没思路了，感觉可以多线程开始学习了，多个分支学
-
-**Branch**： [ts-beginner](https://github.com/sumaolin/study/tree/ts-beginner) 
-
-**Status**：学习中……
