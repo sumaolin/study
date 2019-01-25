@@ -12,7 +12,7 @@
 
 ### 描述类
 
-实现描述类的结果状态
+实现描述类的结构状态
 
 1. 带构造器constructor() 的类 通过 implements
 
@@ -175,9 +175,24 @@ console.dir(c)
    ref：[Typescript: Index signature is missing in type](https://stackoverflow.com/questions/37006008/typescript-index-signature-is-missing-in-type) 
 
 
+   解决： [官方文档： 接口](https://www.tslang.cn/docs/handbook/interfaces.html)  中的 **可索引的类型** 
+
+   Index signature （可索引签名）： 
+
+   ```tsx
+   interface StringArray {
+     [index: number]: string;  // index signature 可索引签名
+   }
+   ```
+
+   定义了Object.property | Object['property'] ，所以接口中的property定义也要符合索引签名的结构描述
 
 
 
 ## 困惑
 
 接口描述可实例化 和描述混合类的 没有理解
+
+
+
+接口描述可实例化的结构状态
