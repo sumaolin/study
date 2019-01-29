@@ -92,14 +92,19 @@ interface MyDateInit {
   new (year: string, month: string, day: string): myDate
 }
 
-let some: MyDateInit = class SomeDate implements myDate {
+class DateClass implements myDate {
   year: string
   month: string
   day: string
-  constructor(year: string, month: string, day: string) {}
+  constructor(year: string, month: string, day: string) {
+    this.year = year
+    this.month = month
+    this.day = day
+    return this
+  }
 }
 
-let d = new some('2019', '01', '24')
+let d = new DateClass('2019', '01', '24')
 ```
 
 
