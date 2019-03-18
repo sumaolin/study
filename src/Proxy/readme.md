@@ -2,19 +2,29 @@
 
 ### Reference
 
-1. [「译」用 Proxy 追踪 JavaScript 类](https://juejin.im/post/5c8533e6e51d4561a0778a4c)  `demo2.js` 
-
-2. [ES6 中的代理模式-----Proxy](https://www.wangyiming19950222.com/2018/01/07/ES6%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F-----Proxy/) 
+1. [ES6 中的代理模式-----Proxy](https://www.wangyiming19950222.com/2018/01/07/ES6%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F-----Proxy/) 
 
    详细说明了可以代理的方法，get，set， delete，defined等访问属性操作时候的代理定义方法，以及constructor，apply创建类时new对象，调用对象的方法时的代理方法，并且列出来相应的触发函数，详细看cheetSheat
 
-3. [从 C#到 TypeScript - Proxy](http://www.cnblogs.com/brookshi/p/6426741.html#undefined)
+2. [从 C#到 TypeScript - Proxy](http://www.cnblogs.com/brookshi/p/6426741.html#undefined)
 
-4. [从C#到TypeScript - Reflect](http://www.cnblogs.com/brookshi/p/6426732.html) 
+3. [从C#到TypeScript - Reflect](http://www.cnblogs.com/brookshi/p/6426732.html)  `tsconfig.json` 
 
-Typescript 中使用 Proxy，要在 tsconfig 文件中去定义
+   Typescript 中使用 Proxy，要在 tsconfig 文件中去定义
 
+4. [「译」用 Proxy 追踪 JavaScript 类](https://juejin.im/post/5c8533e6e51d4561a0778a4c)  `trackProxy.js` 
 
+   `getCaller`  通过`new Error()`  获取外代理被调用时的函数名称
+
+   `trackClass`  代理新的Class类，通过constructor代理新new个实例，并代理实例中的属性的get，set，和函数的apply；
+
+   `trackObject`  直接代理实例对象，直接设置代理属性的get，set和函数方法的apply代理
+
+5. [拿Proxy可以做哪些有意思的事儿](https://segmentfault.com/a/1190000015009255) 
+
+   讲到了，可以做构建函数new调用时候的判断，是直接调用函数 apply了还是使用new 调用了constructor；封装fetch；统计函数调用次数 apply；
+
+   
 
 ### Question
 
