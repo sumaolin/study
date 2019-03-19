@@ -77,6 +77,20 @@
 
    set中要再设置target[prop] 的值，否则新的更新赋值不起作用
 
+7. [实例解析ES6 Proxy使用场景](https://www.w3cplus.com/javascript/use-cases-for-es6-proxies.html) 
+
+   [Proxy.revocable](http://es6.ruanyifeng.com/#docs/proxy#Proxy-revocable) 可以中断代理  `revocable.js` ，实现可控制的开发者权限；
+
+   `validator.js`  Class属性赋值时候的类型检测，和Class分离，避免耦合，类型检测可以无限扩展
+
+   `checkArgs.js`  检测函数的参数数量，以及类型; 实际上不能检测参数数量，想下怎么实现数量的检测？
+
+8. [阮一峰 ES6 proxy](http://es6.ruanyifeng.com/#docs/proxy) 
+
+
+
+先看的上面的文章，遇到不懂的才去察看8中标准相关的文章，并没有深入看ES中的标准文章，得看下《深入理解ES6》中的相关章节
+
 
 
 ### Question
