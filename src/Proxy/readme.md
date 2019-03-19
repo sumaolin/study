@@ -20,11 +20,64 @@
 
    `trackObject`  直接代理实例对象，直接设置代理属性的get，set和函数方法的apply代理
 
-5. [拿Proxy可以做哪些有意思的事儿](https://segmentfault.com/a/1190000015009255) 
+   `trackPropertySet(), trackPropertyGet(), trackFunctionCall()` 使用的工厂模式，return ` set(target, prop, value, receiver), get(target, prop, receiver), apply(target, thisArg, arguments)` 
 
-   讲到了，可以做构建函数new调用时候的判断，是直接调用函数 apply了还是使用new 调用了constructor；封装fetch；统计函数调用次数 apply；
+   ```js
+   trackFunctionCall(opts){
+     return apply(target, thisArg, arguments){
+       let retVal = target.apply(thisArg, arguments) // 获取被代理函数的执行结果，前后加上时间，开源统计执行时间
+     }
+   }
+   ```
 
    
+
+5. [拿Proxy可以做哪些有意思的事儿](https://segmentfault.com/a/1190000015009255) 
+
+   讲到了，可以做构建函数new调用时候的判断，是直接调用函数 apply了还是使用new 调用了constructor；封装fetch；统计函数调用次数 apply;
+
+6. [ES6 Proxy/Reflect 浅析](https://segmentfault.com/a/1190000008326517)  `demo3.js` 
+
+   提出了代理对象 和被代理对象之间的关系，是浅拷贝关系，评论提到了是操作同一地址值
+
+   ```js
+   let target = {
+     _prop: 'foo',
+     prop: 'foo2'
+   }
+   let handler = {
+     get: function(target, prop, receiver) {
+       return Reflect.get(target, prop, receiver)
+     },
+     set: function(target, prop, value, receiver) {
+       let originVal = target[prop]
+       // let argeVal = value
+       console.log(`originValue : ${originVal}`)
+       console.log(`will set value : ${value}`)
+       target[prop] = value // 这个是改变 值的设置，不写不获取不到新赋值的属性值
+       // return false
+       // return value
+       return true // 测试写不写都没问题
+     }
+   }
+   
+   let proxy = new Proxy(target, handler)
+   /*
+     对target 的添加新属性，proxy也会有
+     对proxy设置新属性，target属性也会更新
+   */
+   proxy._prop = 'bar'
+   target.name = 'su'
+   
+   console.log(target._prop)
+   console.log(proxy._prop)
+   console.log(proxy.name)
+   
+   ```
+
+   set中要再设置target[prop] 的值，否则新的更新赋值不起作用
+
+
 
 ### Question
 
