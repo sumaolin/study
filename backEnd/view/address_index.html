@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <title>填写收货地址</title>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no, minimal-ui"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <!-- 忽略页面中的数字识别和email识别 -->
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true" />
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <script type="text/javascript">
+      ;(function(win) {
+        var timeout,
+          doc = win.document,
+          html = doc.documentElement
+
+        function setFontSize() {
+          var htmlWidth = html.getBoundingClientRect().width
+          var ratio = htmlWidth / 640
+          if (htmlWidth < 640) {
+            win.rem = ratio * 1.5
+          } else {
+            win.rem = 1.5
+          }
+          win.responseRatio = ratio
+          html.style.fontSize = win.rem + 'rem'
+        }
+        win.addEventListener(
+          'resize',
+          function() {
+            clearTimeout(timeout), (timeout = setTimeout(setFontSize, 300))
+          },
+          false
+        )
+        setFontSize()
+      })(window)
+    </script>
+    <script>
+      var urlMap = {
+        sendCode: 'api/api/wxapp_send_captcha.php',
+        setAddress: 'api/campaign_huggies/blt/set_address.php'
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="//res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css"
+    />
+    <!-- QQ强制竖屏 -->
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="assets/styles/main.css" />
+  </head>
+  <body class="address">
+    <div class="wrap">
+      <div class="container">
+        <h2 class="tit_tip hide_text">
+          请您正确并完整的填写信息， 以便产品顺利送达！
+        </h2>
+        <div class="product_d"></div>
+        <!-- 表单 -->
+        <form action="#" method="post">
+          <!-- 后端传值 -->
+          <input type="hidden" name="order_id" id="order_id" value="" />
+          <!-- wxapp_send_captcha 参数 -->
+          <input type="hidden" name="unionid" id="unionid" value="" />
+          <input type="hidden" name="unix_time" id="unix_time" value="" />
+          <input type="hidden" name="token" id="token" value="" />
+
+          <div class="form-wrap">
+            <div class="field-item">
+              <label for="" class="t">姓名：</label>
+              <div class="field-cn">
+                <input type="text" id="name" class="cinput" name="name" />
+              </div>
+            </div>
+
+            <div class="field-item area_field">
+              <label for="province" class="t">省份：</label>
+              <div class="field-cn">
+                <select name="province" id="province" class="cselect"></select>
+
+                省
+                <select name="city" id="city" class="cselect"></select>
+                市
+                <select name="region" id="region" class="cselect"></select>
+                区
+              </div>
+            </div>
+
+            <div class="field-item">
+              <label for="address" class="t">地址：</label>
+              <div class="field-cn">
+                <input type="text" id="address" class="cinput" name="address" />
+              </div>
+            </div>
+
+            <div class="field-item">
+              <label for="zipcode" class="t">邮编：</label>
+              <div class="field-cn">
+                <input type="text" id="zipcode" class="cinput" name="zipcode" />
+              </div>
+            </div>
+
+            <div class="field-item tel_field">
+              <label for="tel" class="t">手机：</label>
+              <div class="field-cn">
+                <input type="tel" id="tel" name="tel" class="cinput" />
+                <a href="#" id="vcode_btn" class="btn-vcode">发送验证码</a>
+              </div>
+            </div>
+
+            <div class="field-item vcode_field">
+              <label for="" class="t"></label>
+              <div class="field-cn">
+                <input type="text" class="cinput" id="vcode" name="vcode" />
+              </div>
+            </div>
+
+            <div class="field-item">
+              <label for="gender" class="t">性别</label>
+              <div class="field-cn">
+                <input type="radio" class="cradio" name="gender" value="男" />
+                男
+                <input type="radio" class="cradio" name="gender" value="女" />
+                女
+                <span class="t-tip">（请勾选宝宝的性别哦～）</span>
+              </div>
+            </div>
+
+            <!-- end form-wrap -->
+          </div>
+          <div class="btn-wrap">
+            <input
+              type="submit"
+              value="查看推荐"
+              class="submit_btn btn hide_text"
+            />
+          </div>
+        </form>
+        <!-- end form -->
+      </div>
+    </div>
+
+    <!-- errTip Dialog dom -->
+    <div class="dialog" id="errTip_dialog">
+      <div class="dialog-cn">
+        <i class="icon icon-close"></i>
+        <div class="content">
+          <div class="errTip"></div>
+        </div>
+      </div>
+    </div>
+    <!-- /errTip Dialog dom -->
+
+    <!-- weui toast -->
+    <div id="loadingToast">
+      <div class="weui-mask_transparent"></div>
+      <div class="weui-toast">
+        <i class="weui-loading weui-icon_toast"></i>
+        <p class="weui-toast__content">数据加载中</p>
+      </div>
+    </div>
+    <!-- /weui toast -->
+
+    <div id="mask"></div>
+    <script src="assets/scripts/vendor.js"></script>
+    <script src="assets/scripts/lib/location.1.1.js"></script>
+    <script src="assets/scripts/lib/V.js"></script>
+    <script src="assets/scripts/address.js"></script>
+  </body>
+</html>

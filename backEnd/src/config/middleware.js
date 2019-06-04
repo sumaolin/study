@@ -1,5 +1,5 @@
-const path = require('path');
-const isDev = think.env === 'development';
+const path = require('path')
+const isDev = think.env === 'development'
 
 module.exports = [
   {
@@ -14,7 +14,7 @@ module.exports = [
     enable: isDev,
     options: {
       root: path.join(think.ROOT_PATH, 'www'),
-      publicPath: /^\/(static|favicon\.ico)/
+      publicPath: /^\/(assets|favicon\.ico)/
     }
   },
   {
@@ -34,4 +34,4 @@ module.exports = [
   },
   'logic',
   'controller'
-];
+]
