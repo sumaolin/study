@@ -41,13 +41,13 @@
         }
 
         var tel = $('#tel').val()
+        _this.getVcode(tel)
         // _this.setCountDownVcode()
-        if (!V.isMobile(tel)) {
-          _this.showErrTip('请输入正确的手机号码！')
-          return false
-        } else {
-          _this.getVcode(tel)
-        }
+        // if (!V.isMobile(tel)) {
+        //   _this.showErrTip('请输入正确的手机号码！')
+        //   return false
+        // } else {
+        // }
       })
     },
 
@@ -155,7 +155,7 @@
       }).then(function(res) {
         console.log(res)
         _this.hideLoadingToast()
-        if (res.num === 0) {
+        if (res.errno === 0) {
           _this.setCountDownVcode()
         }
       })
