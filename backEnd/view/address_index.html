@@ -46,7 +46,7 @@
     <script>
       var urlMap = {
         sendCode: '/captcha',
-        setAddress: 'api/campaign_huggies/blt/set_address.php'
+        setAddress: '/address/add'
       }
     </script>
     <link
@@ -67,7 +67,7 @@
         </h2>
         <div class="product_d"></div>
         <!-- 表单 -->
-        <form action="#" method="post">
+        <form action="/address/submit" method="post">
           <!-- 后端传值 -->
           <input type="hidden" name="order_id" id="order_id" value="" />
           <!-- wxapp_send_captcha 参数 -->

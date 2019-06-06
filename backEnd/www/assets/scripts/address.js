@@ -26,11 +26,11 @@
         $('body').animate({ scrollTop: 0 }, 1000)
       })
       $('.submit_btn').on('click touchend', function(e) {
-        e.preventDefault()
+        // e.preventDefault()
         e.stopPropagation()
         // window.location.href = 'order.html'
 
-        _this.getFormData()
+        // _this.getFormData()
       })
 
       $('#vcode_btn').on('click, touchend', function(e) {
