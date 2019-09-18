@@ -6,7 +6,11 @@ module.exports = class extends Base {
   }
 
   addAction() {}
-  submitAction() {
+  async submitAction() {
+    const addressList = await this.model('address')
+      .where({ user_id: think.userId })
+      .select()
     console.log('address controller submit action')
+    this.model(addressList)
   }
 }
