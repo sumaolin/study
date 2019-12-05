@@ -1,7 +1,7 @@
 {
   "name": "study",
   "version": "0.0.1",
-  "description": "'学习demo'",
+  "description": "深入浅出TypeScript：从基础知识到类型编程",
   "main": "index.js",
   "scripts": {
     "cz": "git-cz",
@@ -25,7 +25,8 @@
     "commitizen": "^2.9.6",
     "conventional-changelog": "^1.1.24",
     "cz-conventional-changelog": "^2.1.0",
-    "eslint-plugin-prettier": "^2.6.2"
+    "eslint-plugin-prettier": "^2.6.2",
+    "typescript": "^3.7.3"
   },
   "eslintConfig": {
     "extends": [
