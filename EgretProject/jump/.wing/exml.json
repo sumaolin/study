@@ -1,0 +1,11 @@
+{
+  "16d43b49bc3": {
+    "path": "scene\\SceneBegin.ts",
+    "class": "SceneBegin",
+    "parentPath": ""
+  },
+  "global": {
+    "globalAutoLayerMarkEnable": false,
+    "globalRulerEnable": true
+  }
+}
