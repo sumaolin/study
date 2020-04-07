@@ -40,13 +40,40 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var koa_1 = __importDefault(require("koa"));
+var koa_better_router_1 = __importDefault(require("koa-better-router"));
+var koa_better_body_1 = __importDefault(require("koa-better-body"));
+var koa_convert_1 = __importDefault(require("koa-convert"));
+var router = koa_better_router_1.default().loadMethods();
 var app = new koa_1.default();
-app.use(function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
+router.get('/hello', function (ctx, next) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
-        ctx.body = 'Todo App3';
-        return [2 /*return*/];
+        switch (_a.label) {
+            case 0:
+                ctx.body = "Hello world! prefix: " + ctx.route.prefix;
+                return [4 /*yield*/, next()];
+            case 1:
+                _a.sent();
+                return [2 /*return*/];
+        }
     });
 }); });
+router.get('/foobar', function (ctx, next) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                ctx.body = "Foo Bar Baz! " + ctx.route.prefix;
+                return [4 /*yield*/, next()];
+            case 1:
+                _a.sent();
+                return [2 /*return*/];
+        }
+    });
+}); });
+var api = koa_better_router_1.default({ prefix: '/api' });
+api.extend(router);
+app.use(koa_convert_1.default(koa_better_body_1.default()));
+app.use(router.middleware());
+app.use(api.middleware());
 app.listen(3000, function () {
     console.log('Server started On http://localhost:3000');
 });

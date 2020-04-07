@@ -14,7 +14,9 @@
     "type": "git",
     "url": "git+https://github.com/sumaolin/study.git"
   },
-  "keywords": ["code"],
+  "keywords": [
+    "code"
+  ],
   "author": "sumaolin619@gmail.com",
   "license": "ISC",
   "bugs": {
@@ -23,6 +25,8 @@
   "homepage": "https://github.com/sumaolin/study#readme",
   "devDependencies": {
     "@types/koa": "^2.11.3",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-router": "^7.4.0",
     "@types/node": "^13.11.0",
     "commitizen": "^2.9.6",
     "conventional-changelog": "^1.1.24",
@@ -30,8 +34,12 @@
     "eslint-plugin-prettier": "^2.6.2"
   },
   "eslintConfig": {
-    "extends": ["prettier"],
-    "plugins": ["prettier"]
+    "extends": [
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ]
   },
   "prettier": {
     "singleQuote": true,
@@ -46,6 +54,9 @@
     }
   },
   "dependencies": {
-    "koa": "^2.11.0"
+    "koa": "^2.11.0",
+    "koa-better-body": "^3.3.9",
+    "koa-better-router": "^2.1.1",
+    "koa-convert": "^1.2.0"
   }
 }
