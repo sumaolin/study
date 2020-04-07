@@ -6,15 +6,15 @@
   "scripts": {
     "cz": "git-cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start dist/index.js --watch dist",
+    "tsc": "tsc --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sumaolin/study.git"
   },
-  "keywords": [
-    "code"
-  ],
+  "keywords": ["code"],
   "author": "sumaolin619@gmail.com",
   "license": "ISC",
   "bugs": {
@@ -22,18 +22,16 @@
   },
   "homepage": "https://github.com/sumaolin/study#readme",
   "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "@types/node": "^13.11.0",
     "commitizen": "^2.9.6",
     "conventional-changelog": "^1.1.24",
     "cz-conventional-changelog": "^2.1.0",
     "eslint-plugin-prettier": "^2.6.2"
   },
   "eslintConfig": {
-    "extends": [
-      "prettier"
-    ],
-    "plugins": [
-      "prettier"
-    ]
+    "extends": ["prettier"],
+    "plugins": ["prettier"]
   },
   "prettier": {
     "singleQuote": true,
@@ -46,5 +44,8 @@
     "conventional-changelog": {
       "path": "./node_modules/conventional-changelog"
     }
+  },
+  "dependencies": {
+    "koa": "^2.11.0"
   }
 }
