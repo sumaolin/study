@@ -42,6 +42,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var koa_1 = __importDefault(require("koa"));
 var koa_better_router_1 = __importDefault(require("koa-better-router"));
 var koa_better_body_1 = __importDefault(require("koa-better-body"));
+var koa_bodyparser_1 = __importDefault(require("koa-bodyparser"));
 var koa_convert_1 = __importDefault(require("koa-convert"));
 var router = koa_better_router_1.default().loadMethods();
 var app = new koa_1.default();
@@ -50,6 +51,24 @@ router.get('/hello', function (ctx, next) { return __awaiter(void 0, void 0, voi
         switch (_a.label) {
             case 0:
                 ctx.body = "Hello world! prefix: " + ctx.route.prefix;
+                return [4 /*yield*/, next()];
+            case 1:
+                _a.sent();
+                return [2 /*return*/];
+        }
+    });
+}); });
+router.post('/upload/:id', function (ctx, next) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                console.log(ctx.request.files);
+                console.log(ctx.request.fields);
+                ctx.body = JSON.stringify({
+                    files: ctx.request.files,
+                    fields: ctx.request.fields,
+                    body: ctx.request.body || null
+                }, null, 2);
                 return [4 /*yield*/, next()];
             case 1:
                 _a.sent();
@@ -71,6 +90,7 @@ router.get('/foobar', function (ctx, next) { return __awaiter(void 0, void 0, vo
 }); });
 var api = koa_better_router_1.default({ prefix: '/api' });
 api.extend(router);
+app.use(koa_convert_1.default(koa_bodyparser_1.default()));
 app.use(koa_convert_1.default(koa_better_body_1.default()));
 app.use(router.middleware());
 app.use(api.middleware());
