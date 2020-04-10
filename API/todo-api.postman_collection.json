@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "e99de092-a54c-4628-b9f0-f0de033d1d9f",
+		"name": "todo-api",
+		"description": "study/tree/todo-api 测试",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/hello",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "sumaolin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "avater",
+							"type": "file",
+							"src": "/F:/Users/KevinSu/Pictures/avater.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api}}/upload/2",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"upload",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "foobar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/foobar",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"foobar"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
