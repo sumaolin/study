@@ -27,3 +27,36 @@ Type originates at this import. A namespace-style import cannot be called or con
 #### 2. [Tuture](https://www.yuque.com/tuture/product-manuals) 写作工具文档
 
 test 了下，每次 `tuture up`  都会切换到master 分支，并且已有的commit会提示 [过时步骤的处理](https://www.yuque.com/tuture/product-manuals/outdated-steps)  ，按文档处理并没有好转，应该是我多分支造成的吧
+
+
+
+### 2020.04.09
+
+#### 1. 完成了 koa-bodyparser 安装
+
+#### 2. 数据库相关的package的安装
+
+
+
+### 2020.04.10
+
+#### 1. postman 测试了koa-bodyparser 中的接口
+
+​	导出了postman文件到API目录下 
+
+
+
+#### 2. tuture destroy 删除写作工具
+
+​	测试下来发现的问题，运行tuture命令自动切换到master分支，所以先删除掉了
+
+
+
+#### 3. new Sequelize() 错误
+
+`[ts] Cannot use 'new' with an expression whose type lacks a call or construct signature.` 
+
+
+
+1. [TypeScript: Cannot use 'new' with an expression whose type lacks a call or construct signature](https://stackoverflow.com/questions/31224392/typescript-cannot-use-new-with-an-expression-whose-type-lacks-a-call-or-const) 
+
