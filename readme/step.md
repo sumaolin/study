@@ -60,3 +60,20 @@ test 了下，每次 `tuture up`  都会切换到master 分支，并且已有的
 
 1. [TypeScript: Cannot use 'new' with an expression whose type lacks a call or construct signature](https://stackoverflow.com/questions/31224392/typescript-cannot-use-new-with-an-expression-whose-type-lacks-a-call-or-const) 
 
+
+
+
+
+### 2020.04.11
+
+1. 安装package时候总是提示 npm Missing write access to
+
+   卸载了cnpm 就解决了
+
+
+
+2. Mac 上安装了sqlite3 和 sqlite studio 
+
+   brew install sqlite3 安装，和 sqlit studio dmg安装包安装
+
+   mac下重新建表了todo.db3
