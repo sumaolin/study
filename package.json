@@ -6,7 +6,7 @@
   "scripts": {
     "cz": "git-cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tsc && ava",
     "start": "pm2 start dist/index.js --watch dist",
     "tsc": "tsc --watch"
   },
@@ -29,6 +29,7 @@
     "@types/koa-router": "^7.4.0",
     "@types/node": "^13.11.0",
     "@types/sequelize": "^4.28.8",
+    "ava": "^3.7.0",
     "commitizen": "^2.9.6",
     "conventional-changelog": "^1.1.24",
     "cz-conventional-changelog": "^2.1.0",

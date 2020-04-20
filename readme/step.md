@@ -77,3 +77,27 @@ test 了下，每次 `tuture up`  都会切换到master 分支，并且已有的
    brew install sqlite3 安装，和 sqlit studio dmg安装包安装
 
    mac下重新建表了todo.db3
+
+
+
+
+
+### 2020.04.20
+
+[编写 Model 与 ava 测试文件](https://miyogurt.github.io/nodelover-books/#/koa-todo-api/模型与测试?id=编写-model-与-ava-测试文件) Issue
+
+1. 测试的代码写完了，ava 运行不起来
+
+
+
+参考资料： Reference
+
+1. [Ava 中文文档](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
+
+2. [使用 AVA 做自动化测试](https://segmentfault.com/a/1190000010416900) 
+
+   看过了，写的很逻辑清晰，写明了什么情况下用什么 API 和 Package
+
+3. [ava-practice](http://i5ting.github.io/ava-practice/) 
+
+   狼书的一个练习
