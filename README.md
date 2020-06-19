@@ -1,5 +1,27 @@
-# study
-学习新知识
+# Nestjs Beginner
+### 2020.06.16
+
+1. [第一步 - Nest.js 中文文档](https://docs.nestjs.cn/7/firststeps)  
+
+   官方文档，init 项目了下
+
+
+
+### 2020.06.18
+
+1. [NestJS 实战教程](<https://juejin.im/collection/5e893a1b6fb9a04d65a15400>)  
+
+   一，二，三 看了下
+
+
+
+### 2020.06.19
+
+1. [【Nestjs实战】Nodejs必学框架 | Nest企业级项目构建与开发实战](https://www.bilibili.com/video/BV1bQ4y1A77L?p=5) 
+
+   视频看了头三集
+
+
 
 
 
@@ -20,70 +42,4 @@
 
    三者插件结合使用，达到onSave时候自动格式化成eslint风格的代码
 
-   ​
-
-## 课程
-
-### 1. [Node Koa2 实战](https://github.com/ikcamp/koa2-tutorial)
-
->  基于Koa2搭建Node.js实战项目教程
-
-Branch：[koa2](https://github.com/sumaolin/study/tree/koa2) 
-
-状态：已完成
-
-
-
-### 2. [Koa2进阶学习笔记](https://github.com/chenshenhai/koa2-note)
-
-> 进度99%，一本关于Koa.js v2.x的学习笔记
-
-Branch：[koa2-note](https://github.com/sumaolin/study/tree/koa2-note)
-
-状态：已完成
-
-
-
-### 3. koa-webuploader
-
-#### 百度FEX 开发的 [webuploader](https://github.com/fex-team/webuploader) It's a new file uploader solution! 
-
-> 特点： 分片、并发；预览、压缩；多途径添加文件（支持文件多选，类型过滤，拖拽(文件&文件夹)，图片粘贴功能）；HTML5 & FLASH； MD5秒传。
-
-Branch：[koa-webuploader]()
-
-Status：开发学习……
-
-
-
-### 4. TypeScript
-
-#### Lesson：[TypeScript 精通指南](https://nodelover.me/course/ts-basic) 
-
-> TypeScript 基础入门到登堂入室 ，相关的电子书： [TypeScript 精通指南](https://github.com/MiYogurt/nodelover-books/tree/master/typescript) 
-
-入门的视频课程，学习下吧，koa-webupload没思路了，感觉可以多线程开始学习了，多个分支学
-
-**Branch**： [ts-beginner](https://github.com/sumaolin/study/tree/ts-beginner) 
-
-**Status**：学习中……
-
-
-
-### 5. [七天学会NodeJS](http://nqdeng.github.io/7-days-nodejs/)
-
-阿里写的Nodejs的基础教程
-
-**Branch**： 未确定
-
-**Status**：未开始
-
-
-
-### 6. Thinkjs框架入门
-
-教程是[Thinkjs官网](https://thinkjs.org/)
-
-**Branch**：[thinkjs-beginner](https://github.com/sumaolin/study/tree/thinkjs-beginner)
-
-**Status**：进行中……
+   
