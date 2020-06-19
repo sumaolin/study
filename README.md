@@ -21,6 +21,18 @@
 
    视频看了头三集
 
+2. [Nest.js 从零到壹系列（一）：项目创建&路由设置&模块](https://juejin.im/post/5e708054f265da570f504905#heading-6) 
+
+   里面讲到的 nest-cli 可以快捷的创建 service，controller, module
+
+   `nest g service user logical`
+
+   `nest g controller user logical` 
+
+   不过我更懒的不想写 service，controller 用 `nest --help` 看了下 cli 的文档，发现了alias ，可以简写成 s, co了
+
+![](F:\gitDev\sumaolin\study\readme\img\1.png)
+
 
 
 
