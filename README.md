@@ -37,6 +37,19 @@
 
 
 
+### 2020.06.22
+
+1. `yarn start:dev`  修改代码 dist 目录代码不更新，直接删除dist 目录，重新运行命令解决
+2. SQL Err :   `Unknown column 'javascript' in 'where clause'`     传入的参数需要用引号包住，表示是字符串
+
+
+
+每天练习一章节吧，别贪多
+
+
+
+
+
 ## 规范
 
 1. [git commit message 规范设置](./readme/git_cmmit_message.md)

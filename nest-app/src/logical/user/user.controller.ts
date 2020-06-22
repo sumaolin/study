@@ -6,7 +6,8 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Post('find-one')
-  findOne(@Body() body: any): string {
+  findOne(@Body() body: any) {
+    console.log('findOne ', body);
     return this.userService.findOne(body.username);
   }
 }
