@@ -14,25 +14,9 @@ export class UserService {
         logging: true,
       });
       const user = res[0];
-      if (user) {
-        return {
-          code: 200,
-          data: {
-            user,
-          },
-          msg: 'success',
-        };
-      } else {
-        return {
-          code: 600,
-          msg: '查无此人',
-        };
-      }
+      return user;
     } catch (error) {
-      return {
-        code: 503,
-        msg: `Server error: ${error}`,
-      };
+      return void 0;
     }
   }
 }
