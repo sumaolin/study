@@ -8,6 +8,22 @@ export class UserController {
   @Post('find-one')
   findOne(@Body() body: any) {
     console.log('findOne ', body);
-    return this.userService.findOne(body.username);
+    const user = this.userService.findOne(body.username);
+    if (user) {
+      return {
+        code: 200,
+        user,
+      };
+    } else {
+      return {
+        code: 400,
+        msg: '未找到用户',
+      };
+    }
+  }
+
+  @Post('register')
+  async register(@Body() body: any): Promise<any> {
+    return await this.userService.register(body);
   }
 }
