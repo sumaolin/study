@@ -1,4 +1,5 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { UserService } from './user.service';
 import { AuthService } from '../auth/auth.service';
 
@@ -26,6 +27,7 @@ export class UserController {
     }
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Post('register')
   async register(@Body() body: any): Promise<any> {
     return await this.userService.register(body);
