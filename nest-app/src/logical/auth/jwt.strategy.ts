@@ -8,9 +8,9 @@ import { jwtContants } from './constants';
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor() {
     super({
-      jwfFromRequest: ExtractJwt.fromAuthHeaderAsBeareToken(),
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretKey: jwtContants.secret,
+      secretOrKey: jwtContants.secret,
     });
   }
 

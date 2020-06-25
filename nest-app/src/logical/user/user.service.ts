@@ -10,7 +10,7 @@ export class UserService {
    * @param username 用户名称
    */
   async findOne(username: string): Promise<any | undefined> {
-    const sql = `SELECT user_id id, real_name realName, role FROM admin_user WHERE account_name = '${username}'`;
+    const sql = `SELECT user_id id, real_name realName, role, passwd password,passwd_salt salt FROM admin_user WHERE account_name = '${username}'`;
 
     try {
       const res = await sequelize.query(sql, {
