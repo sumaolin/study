@@ -110,7 +110,7 @@ export class Logger {
   }
 
   static info(...args) {
-    logger.info(Logger.getStackTrace, ...args);
+    logger.info(Logger.getStackTrace(), ...args);
   }
 
   static warn(...args) {
