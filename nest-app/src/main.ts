@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import * as express from 'express';
 import { LoggerMiddleware } from './middleware/logger.middleware';
 import { TransformInterceptor } from './interceptor/transform.interceptor';
+import { HttpExceptionFilter } from './filter/http-exception.filter';
 
 const log = new LoggerMiddleware();
 
@@ -14,6 +15,7 @@ async function bootstrap() {
 
   app.useGlobalInterceptors(new TransformInterceptor());
   // app.setGlobalPrefix('nest-zero-to-one');
+  app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen(3000);
 }
 bootstrap();
