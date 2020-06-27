@@ -5,6 +5,7 @@ import { LoggerMiddleware } from './middleware/logger.middleware';
 import { TransformInterceptor } from './interceptor/transform.interceptor';
 import { HttpExceptionFilter } from './filter/http-exception.filter';
 import { AllExceptionFilter } from './filter/any-exception.filter';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 const log = new LoggerMiddleware();
 
@@ -18,6 +19,18 @@ async function bootstrap() {
   // app.setGlobalPrefix('nest-zero-to-one');
   app.useGlobalFilters(new AllExceptionFilter());
   app.useGlobalFilters(new HttpExceptionFilter());
+
+  const swaggerOption = new DocumentBuilder()
+    .addBearerAuth()
+    .setTitle('Nest zero API')
+    .setDescription('The nest-app API descript')
+    .setVersion('1.0')
+    .addTag('test')
+    .build();
+
+  const document = SwaggerModule.createDocument(app, swaggerOption);
+  SwaggerModule.setup('api-doc', app, document);
+
   await app.listen(3000);
 }
 bootstrap();

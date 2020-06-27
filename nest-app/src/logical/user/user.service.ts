@@ -1,7 +1,7 @@
 import { Injectable, Post } from '@nestjs/common';
 import * as Sequelize from 'sequelize';
 import sequelize from '../../database/sequelize';
-import { makeSalt, encryptPassword } from 'src/utils/cryptogram';
+import { makeSalt, encryptPassword } from '../../utils/cryptogram';
 
 @Injectable()
 export class UserService {

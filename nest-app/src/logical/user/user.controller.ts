@@ -3,8 +3,11 @@ import { AuthGuard } from '@nestjs/passport';
 import { UserService } from './user.service';
 import { AuthService } from '../auth/auth.service';
 import { ValidationPipe } from '../../pipe/validation.pipe';
-import { RegisterInfoDTO } from './user.dto';
+import { RegisterInfoDTO, LoginDTO } from './user.dto';
+import { ApiTags, ApiBearerAuth, ApiBody } from '@nestjs/swagger';
 
+@ApiBearerAuth()
+@ApiTags('user')
 @Controller('user')
 export class UserController {
   constructor(
@@ -37,7 +40,11 @@ export class UserController {
   }
 
   @Post('login')
-  async login(@Body() loginParmas: any) {
+  @ApiBody({
+    description: '用户登录',
+    type: LoginDTO,
+  })
+  async login(@Body() loginParmas: LoginDTO) {
     console.log('JWT - step1: 用户请求登录');
     const authResult = await this.authService.validateUser(
       loginParmas.username,
