@@ -7,6 +7,12 @@
 
 
 
+
+
+
+
+## [NestJS 实战教程](<https://juejin.im/collection/5e893a1b6fb9a04d65a15400>)  
+
 ### 2020.06.18
 
 1. [NestJS 实战教程](<https://juejin.im/collection/5e893a1b6fb9a04d65a15400>)  
@@ -130,6 +136,21 @@
 
 4. [Nest.js 从零到壹系列（六）：用 15 行代码实现 RBAC 0](https://juejin.im/post/5e81466f51882573b75361e4) 
 
+
+
+
+
+### 2020.06.27
+
+1. [Nest.js 从零到壹系列（六）：用 15 行代码实现 RBAC 0](https://juejin.im/post/5e81466f51882573b75361e4) 
+
+   报错： 
+
+   ```bash
+   SequelizeDatabaseError: Lock wait timeout exceeded; try restarting transaction
+   ```
+
+   update 时候更新不成功
 
 
 
