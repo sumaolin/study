@@ -1,9 +1,43 @@
 # Nestjs Beginner
+### 开源项目
+
+1. [**nodepress**](https://github.com/surmon-china/nodepress) RESTful API service for Blog/CMS, powered by [@nestjs](https://github.com/nestjs) 
+
+   > **适用于 surmon.me 的 RESTful API 服务；基于 nestjs (nodejs)； 需安装 mongoDB 和 Redis 方可完整运行。** 
+
+   CMS 项目，文档写的很详细不错可以参考
+
+2. [mili](https://github.com/shen100/mili)  是一个开源的社区系统，界面优雅，功能丰富 
+
+   > **mili**是一个开源的社区系统，界面优雅，功能丰富。 已在[米粒网](https://www.golang123.com/) 得到应用，你完全可以用它来搭建自己的社区。**mili**的前端使用**vue**、**iview**等技术来开发，后端使用**typescript**、**nodejs**、**nestjs**、**typeorm**等技术来开发。
+
+   可以研究下源代码，整体的解决方案，前端界面，管理后台，api，mysql ，nignx，Redis
+
+3. [Chrome插件（Extensions）开发攻略](https://www.cnblogs.com/guogangj/p/3235703.html) 
+
+   > 好，轮到我的例子登场了。它的功能是这样的：当你浏览博客园的时候，它会启动并尝试获取你浏览的文章的信息（标题、作者和日期），再通过往另一个服务器发送请求的方式，记录和获取你第一次访问这篇文章的时间
+
+   可以通过这样的方式实现一个按钮点击，采集点击的微博，然后把整个微博的元数据发送到后端服务器进行结构化存储
+
 ### 2020.06.16
 
 1. [第一步 - Nest.js 中文文档](https://docs.nestjs.cn/7/firststeps)  
 
    官方文档，init 项目了下
+
+2. [NestJS 实战教程](<https://juejin.im/collection/5e893a1b6fb9a04d65a15400>)  
+
+
+
+### 2020.06.29
+
+
+
+1. [让我们用Nestjs来重写一个CNode](https://github.com/jiayisheji/blog/labels/Nest) 
+
+
+
+### 
 
 
 
@@ -155,6 +189,50 @@
 
 
 2. [Nest.js 从零到壹系列（七）：讨厌写文档，Swagger UI 了解一下？](https://juejin.im/post/5e8ed1516fb9a03c5f73f34f) 
+
+
+
+跟着教程写了下代码，可以运行了，下面归纳总结
+
+
+
+### 归纳总结
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
