@@ -1,5 +1,14 @@
 # 基础入门
 
+## Review
+
+项目的初始化和基本调试
+
+1. `npm i -g @nestjs/cli` 成功后 `nest -v` 会出现版本号，现在用的是 v7.5.2
+2. `nest new project` 创建新的项目
+3. `yarn start:dev` 启动 nodemon 模式调试程序
+4. controller 设置路由前缀；`app.setGlobalPrefix()` 设置 App 整体的路由前缀
+
 ## Reference
 
 1. [Nestjs framework 30 天初探:Day01 攻略行前說明](https://ithelp.ithome.com.tw/articles/10190659)
