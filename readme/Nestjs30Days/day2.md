@@ -1,4 +1,4 @@
-# Controller, Service, Module
+# Nest 基础功能 — Controller, Service, Module
 
 Nest cli 提供的创建 Controller, Service, Module 的命令
 
@@ -53,3 +53,28 @@ resource 可以选择创建的类型，REST API 类型后，是一次创建好 s
 5. [Nestjs 框架教程（第五篇：模块）](https://keelii.com/2019/07/03/nestjs-framework-tutorial-5/)
 
    装饰器中通过配置参数，providers, controllers 关联相应的 service 和 controller, app 根 module 中直接 imports 就可以配置完成了
+
+6. [Nest 基础功能 —— Controller](https://github.com/dzzzzzy/Nestjs-Learning/blob/master/docs/controller.md)
+
+   > `@Controller()` 注解的源码：
+   >
+   > ```typescript
+   > export function Controller(prefix?: string): ClassDecorator {
+   >   const path = isUndefined(prefix) ? '/' : prefix
+   >   return (target: object) => {
+   >     Reflect.defineMetadata(PATH_METADATA, path, target)
+   >   }
+   > }
+   > ```
+
+7. [Nestjs framework 30 天初探:Day02 Controllers](https://ithelp.ithome.com.tw/articles/10190759)
+
+   DTO 类 (Data Transfer Object)
+
+8. [Nestjs framework 30 天初探:Day03 Components](https://ithelp.ithome.com.tw/articles/10190874)
+
+   应该对应的是 V7 版本中的 Service
+
+9. [Nestjs framework 30 天初探:Day04 Modules](https://ithelp.ithome.com.tw/articles/10190941)
+
+   连个 module，在 A module 中调用 B module 的方法

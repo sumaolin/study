@@ -34,7 +34,7 @@ app.controller.ts 中的 getHello() 方法 通过上面的设置对应的访问�
 
 nodemon 模式启动项目 ： yarn start:dev ，这样每次修改代码后程序自动重新启动，不用手动启动了
 
-### [Day2](./readme/Nestjs30Days/day1.md)
+### [Day2](./readme/Nestjs30Days/day1.md) 2020-11-10
 
 ## 规范
 
