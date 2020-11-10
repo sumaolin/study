@@ -24,6 +24,24 @@ resource 可以选择创建的类型，REST API 类型后，是一次创建好 s
 
 ## Review
 
+#### controller
+
+简单理解为路由设置，通过装饰器@controller() 来注解，可以设置全局路由，类应用，方法的路由前缀，
+
+可以获取请求方法，请求各种参数，请求 header，返回状态码，
+
+#### provider
+
+生成 service，通过装饰器@injectable()注解，处理数据库相关的各种业务逻辑， DTO 类型应该在这层应用吧
+
+#### module
+
+拟合 controller 和 provider 的注解容器，通过装饰器@module() 注解实现，装饰器有四个参数：imports，controllers, providers, exports。provider 只有在 module 中进行配置后才可以在 controller 的构造器中注入使用，开始是在根 module AppModule 中进行配置的，后面不同的 Modules 可以单独进行配置成独立的 module 后再在 AppModule 中进行 imports 配置。
+
+方便调用，允许设置一个全局 Module，通过装饰器 @Global()
+
+动态 module，可以用于数据库的动态链接
+
 ## Reference
 
 1. [Nest.js 从零到壹系列（一）：项目创建&路由设置&模块](https://juejin.im/post/6844904096017678343)
@@ -54,7 +72,19 @@ resource 可以选择创建的类型，REST API 类型后，是一次创建好 s
 
    装饰器中通过配置参数，providers, controllers 关联相应的 service 和 controller, app 根 module 中直接 imports 就可以配置完成了
 
-6. [Nest 基础功能 —— Controller](https://github.com/dzzzzzy/Nestjs-Learning/blob/master/docs/controller.md)
+6. [Nestjs framework 30 天初探:Day02 Controllers](https://ithelp.ithome.com.tw/articles/10190759)
+
+   DTO 类 (Data Transfer Object)
+
+7. [Nestjs framework 30 天初探:Day03 Components](https://ithelp.ithome.com.tw/articles/10190874)
+
+   应该对应的是 V7 版本中的 provider
+
+8. [Nestjs framework 30 天初探:Day04 Modules](https://ithelp.ithome.com.tw/articles/10190941)
+
+   俩个 module，在 A module 中调用 B module 的方法， 其中装饰器中的 modules 参数在 V7 版本中变成了 imports
+
+9. [Nest 基础功能 —— Controller](https://github.com/dzzzzzy/Nestjs-Learning/blob/master/docs/controller.md)
 
    > `@Controller()` 注解的源码：
    >
@@ -67,14 +97,16 @@ resource 可以选择创建的类型，REST API 类型后，是一次创建好 s
    > }
    > ```
 
-7. [Nestjs framework 30 天初探:Day02 Controllers](https://ithelp.ithome.com.tw/articles/10190759)
+10. [Nest 基础功能 —— Provider](https://github.com/dzzzzzy/Nestjs-Learning/blob/master/docs/provider.md)
 
-   DTO 类 (Data Transfer Object)
+11. [Nest 基础功能 —— Module](https://github.com/dzzzzzy/Nestjs-Learning/blob/master/docs/module.md) **推荐**
 
-8. [Nestjs framework 30 天初探:Day03 Components](https://ithelp.ithome.com.tw/articles/10190874)
+    装饰器有四个参数： imports, controlllers, providers, exports
 
-   应该对应的是 V7 版本中的 Service
+    可以创建动态 Module
 
-9. [Nestjs framework 30 天初探:Day04 Modules](https://ithelp.ithome.com.tw/articles/10190941)
+    全局 module，每个 nest 应用只能有一个全局 module
 
-   连个 module，在 A module 中调用 B module 的方法
+12. [Nest 基础功能 —— NestFactory](https://github.com/dzzzzzy/Nestjs-Learning/blob/master/docs/nest-factory.md)
+
+    后面可以看下 NestFactory 源码

@@ -36,6 +36,24 @@ nodemon 模式启动项目 ： yarn start:dev ，这样每次修改代码后程�
 
 ### [Day2](./readme/Nestjs30Days/day1.md) 2020-11-10
 
+#### controller
+
+简单理解为路由设置，通过装饰器@controller() 来注解，可以设置全局路由，类应用，方法的路由前缀，
+
+可以获取请求方法，请求各种参数，请求 header，返回状态码，
+
+#### provider
+
+生成 service，通过装饰器@injectable()注解，处理数据库相关的各种业务逻辑， DTO 类型应该在这层应用吧
+
+#### module
+
+拟合 controller 和 provider 的注解容器，通过装饰器@module() 注解实现，装饰器有四个参数：imports，controllers, providers, exports。provider 只有在 module 中进行配置后才可以在 controller 的构造器中注入使用，开始是在根 module AppModule 中进行配置的，后面不同的 Modules 可以单独进行配置成独立的 module 后再在 AppModule 中进行 imports 配置。
+
+方便调用，允许设置一个全局 Module，通过装饰器 @Global()
+
+动态 module，可以用于数据库的动态链接
+
 ## 规范
 
 1. [git commit message 规范设置](./readme/git_cmmit_message.md)
