@@ -6,9 +6,33 @@
 
 版本信息： node 12.19.0; npm 6.14.8; nest-cli 7.2.0
 
+## Reference
+
+1. [NestJS 实战教程](https://juejin.im/collection/6845244185432293389)
+2. [Nest.js 教程](https://github.com/dzzzzzy/Nestjs-Learning)
+3. [Nestjs 框架教程](https://keelii.com/2019/07/03/nestjs-framework-tutorial-1/)
+
 ## 学习进度
 
 ### [Day1](./readme/Nestjs30Days/day1.md) 2020-11-09
+
+安装 nest cli : npm i -g @nestjs/cli ，成功后可以在 cli 中使用 nest 命令
+
+初始化项目： nest new project
+
+通过 controller 控制路由
+
+1. @get('/hello') 控制访问
+2. @controller('/user') 整个 controller 下的都可以必须加 user 前缀了
+3. app 全局添加前缀 app.setGlobleProfix('admin') 来控制所有路由添加前缀
+
+app.controller.ts 中的 getHello() 方法 通过上面的设置对应的访问路由变化：
+
+1. <http://localhost:3000/hello>
+2. <http://localhost:3000/user/hello>
+3. <http://localhost:3000/admin/user/hello>
+
+nodemon 模式启动项目 ： yarn start:dev ，这样每次修改代码后程序自动重新启动，不用手动启动了
 
 ## 规范
 
