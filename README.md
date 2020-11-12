@@ -56,6 +56,29 @@ nodemon 模式启动项目 ： yarn start:dev ，这样每次修改代码后程�
 
 ### [Day3](./readme/Nestjs30Days/day3.md) 2020-11-11
 
+#### 自定义中间件的方式
+
+1. 类 implements NestMiddleware，并且通过装饰器 @injectable 注解，可以通过 cli 工具直接生成基础代码 ： `nest g mi Logger middlewarePaht`
+2. 函数中间件，类似 express 的
+
+自定义中间件时候可以通过构造函数注入 provider，调用其他逻辑
+
+#### 使用中间件 Middleware
+
+1. 根 Module 实现 NestModule 并且在 configure(cm:customerMiddleware){cm.apply(LoggerMiddleware).exclude().forRoutes()}
+
+   ```typescript
+   export class AppModule implements NestModule {
+     configure(cm: MiddlewareConsumer) {
+       cm.apply(LoggerMiddleware)
+         .exclude({ path: 'cats', method: RequestMethod.GET }) // 排除不想使用中间件的路由
+         .forRoutes('cat') // 可以是 controller
+     }
+   }
+   ```
+
+2. app.use(LoggerMiddleware) exppress 方式的
+
 ## 规范
 
 1. [git commit message 规范设置](./readme/git_cmmit_message.md)
