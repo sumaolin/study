@@ -5,4 +5,8 @@ export class CatService {
   getAll() {
     return 'all cat service connect with module cat';
   }
+
+  detail() {
+    return 'miao miao';
+  }
 }
