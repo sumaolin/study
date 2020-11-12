@@ -4,14 +4,16 @@ import {
   MiddlewareConsumer,
   RequestMethod,
 } from '@nestjs/common';
-// import { AppController } from './app.controller';
-// import { AppService } from './app.service';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 import { CatModule } from './demo/cat/cat.module';
 import { LoggerMiddleware } from './middleware/logger.middleware';
-import { log } from './middleware/log';
+// import { log } from './middleware/log';
 
 @Module({
   imports: [CatModule],
+  providers: [AppService],
+  controllers: [AppController],
 })
 export class AppModule implements NestModule {
   configure(cm: MiddlewareConsumer) {
