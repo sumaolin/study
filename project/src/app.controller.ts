@@ -1,6 +1,13 @@
-import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  UseFilters,
+} from '@nestjs/common';
 import { CustomerException } from './Exceptions/customerException';
 import { AppService } from './app.service';
+import { HttpExceptionFilter } from './filter/http-exception.filter';
 
 @Controller('user')
 export class AppController {
@@ -12,6 +19,7 @@ export class AppController {
   }
 
   @Get('getException')
+  // @UseFilters(HttpExceptionFilter)
   async getException() {
     throw new Error('错误test');
     // throw new HttpException('禁止访问', HttpStatus.FORBIDDEN);
