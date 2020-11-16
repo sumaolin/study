@@ -81,6 +81,25 @@ nodemon 模式启动项目 ： yarn start:dev ，这样每次修改代码后程�
 
 ### [Day4](./readme/Nestjs30Days/day4.md) 2020-11-12
 
+异常过滤器对异常进行捕获处理
+
+1. 定义自己的异常 ，实现 HttpException 类
+
+2. 定义自己的异常过滤器 实现 ExceptionFilter，并使用 装饰器 @catch 进行注解
+
+3. 使用自定义的异常过滤器，根据作用范围可以分为： 方法，控制器，全局，通过装饰器@useFilters()使用，里面参数最好使用类，不要使用实例
+
+   ```typescript
+   @useFilter(HttpExceptionFilter) // 推荐
+   @useFilter(new HttpExceptionFilter()) // 不推荐
+   ```
+
+   因为 Nest 遵循的单例模式
+
+#### 疑问点
+
+使用异常处理器时候定义了两种方法，3 是一种，还有一种没体会出两种的不同
+
 ## 规范
 
 1. [git commit message 规范设置](./readme/git_cmmit_message.md)

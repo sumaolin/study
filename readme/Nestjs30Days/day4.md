@@ -24,7 +24,7 @@
 
 3. 实现 ExceptionFilter 来过滤自定义异常处理
 
-   @catch() 参数可以确定要过滤的异常类型，如果不写，可以过滤全部异常，在实现接口中catch方法时候也要第一个参数catch(exception：unknown)，才可以捕获全部异常
+   @catch() 参数可以确定要过滤的异常类型，如果不写，可以过滤全部异常，在实现接口中 catch 方法时候也要第一个参数 catch(exception：unknown)，才可以捕获全部异常
 
 4. 使用 异常过滤器 ExceptionFilter，可以在不同作用域的异常处理，（不同作用域，代表不同的控制范围），通过装饰器 @UseFilters(new ExceptionFilter()) 来实现
 
@@ -32,11 +32,47 @@
    2. controler
    3. app 全局，全局方式有两种，一是 app.useGlobalFilters(new ExceptionFilter())，这个方式无法在 ExceptionFilter 中通过构造函数 依赖注入
 
-   
-
 ## Reference
 
 1. [Nestjs framework 30 天初探:Day06 Exception Filters](https://ithelp.ithome.com.tw/articles/10191003)
+
 2. [Nestjs 框架教程（第七篇：异常过滤器）](https://keelii.com/2019/07/03/nestjs-framework-tutorial-7/)
-3. [Nest 高级功能 —— Exception filter](https://github.com/dzzzzzy/Nestjs-Learning/blob/master/docs/exception-filter.md) 
-4. [异常过滤器](https://docs.nestjs.cn/7/exceptionfilters?id=异常过滤器)  官网
+
+   自定义 HttpException 3 中方法
+
+   1. `throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);`
+
+   2. ```typescript
+      throw new HttpException(
+        {
+          status: HttpStatus.FORBIDDEN,
+          error: 'This is a custom message',
+        },
+        403
+      )
+      ```
+
+   3. 创建自己的类实现 HttpException
+
+      ```typescript
+      export class ForbiddenException extends HttpException {
+        constructor() {
+          super('Forbidden', HttpStatus.FORBIDDEN)
+        }
+      }
+      ```
+
+      在需要的地方之间抛出
+
+      ```typescript
+      @Get()
+      async findAll() {
+        throw new ForbiddenException();
+      }
+      ```
+
+   推荐的第三种方法
+
+3. [Nest 高级功能 —— Exception filter](https://github.com/dzzzzzy/Nestjs-Learning/blob/master/docs/exception-filter.md)
+
+4. [异常过滤器](https://docs.nestjs.cn/7/exceptionfilters?id=异常过滤器) 官网
