@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
+import { CreateCatDto } from './create-cat.dto';
 
+const catList = [];
 @Injectable()
 export class CatService {
   getAll() {
@@ -8,5 +10,10 @@ export class CatService {
 
   detail() {
     return 'miao miao';
+  }
+
+  create(cat: CreateCatDto) {
+    catList.push(cat);
+    return catList;
   }
 }
