@@ -1,4 +1,4 @@
-import * as Joi from '@hapi/joi';
+import * as Joi from 'joi';
 
 export class CreateCatDto {
   name: string;
@@ -6,8 +6,8 @@ export class CreateCatDto {
   breed: string;
 }
 
-export const CreateCatSchema = {
+export const CreateCatSchema = Joi.object({
   name: Joi.string().required(),
   age: Joi.number().required(),
   breed: Joi.string().required(),
-};
+});

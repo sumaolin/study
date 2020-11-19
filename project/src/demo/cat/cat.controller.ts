@@ -19,6 +19,6 @@ export class CatController {
   @Post()
   @UsePipes(new JoiValidationPipe(CreateCatSchema))
   async create(@Body() cat: CreateCatDto) {
-    this.catService.create(cat);
+    return this.catService.create(cat);
   }
 }

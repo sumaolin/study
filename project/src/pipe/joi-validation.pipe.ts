@@ -1,19 +1,24 @@
+import * as Joi from 'joi';
 import {
   ArgumentMetadata,
   Injectable,
   PipeTransform,
   BadRequestException,
 } from '@nestjs/common';
-import * as Joi from '@hapi/joi';
 
 @Injectable()
 export class JoiValidationPipe implements PipeTransform {
-  constructor(private schema: object) {}
+  constructor(private schema: Joi.ObjectSchema) {}
 
-  transform(value: any, metadata: ArgumentMetadata) {
-    const { error } = Joi.valid(value, this.schema);
+  async transform(value: any, metadata: ArgumentMetadata) {
+    console.log(value);
+
+    // const { error } = await Joi.validate( value, this.schema );
+    const { error } = this.schema.validate(value);
+
+    console.log('JoiValidationPipe : ', error);
     if (error) {
-      return new BadRequestException('validation failed');
+      throw new BadRequestException(JSON.stringify(error));
     }
     return value;
   }
