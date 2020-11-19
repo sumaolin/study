@@ -2,6 +2,26 @@
 
 ## Review
 
+这两天被 refer 2,3 里面使用 joi 的 demo 卡住了，2020.11.19 看了 [Joi](https://github.com/sideway/joi) 官方 demo 才明白了自己在那块写错了，Joi 版本升级后写法的改变，schema 的的 object 定义方法改变了，新知识还是要查[官方的文档 API](https://joi.dev/api/) 啊
+
+```typescript
+export const CreateCatSchema = Joi.object({
+  name: Joi.string().required(),
+  age: Joi.number().required(),
+  breed: Joi.string().required(),
+})
+```
+
+原来不需要通过 `Joi.object()` 定义的，直接字面量定义对象就可以了，旧的代码：
+
+```typescript
+export const CreateCatSchema = {
+  name: Joi.string().required(),
+  age: Joi.number().required(),
+  breed: Joi.string().required(),
+}
+```
+
 ## Reference
 
 1. [Nestjs framework 30 天初探:Day07 Pipes](https://ithelp.ithome.com.tw/articles/10191227)
@@ -14,5 +34,5 @@
    > - **验证**：对输入数据时行验证，如果合法让数据通过管道，否则抛出异常
    >
    > 管道 pipe 和过滤器 filter 之间的关系：管道偏向于服务端控制器逻辑，过滤器则更适合用客户端逻辑
-   
-3. [官网 管道](https://docs.nestjs.cn/7/pipes) 
+
+3. [官网 管道](https://docs.nestjs.cn/7/pipes)
