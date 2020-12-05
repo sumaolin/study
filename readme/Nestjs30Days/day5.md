@@ -6,32 +6,27 @@
 
 几种管道的用法 Pipe
 
-1. `class-validator& class-transformer`  进行 TS 中的 类型验证，统计装饰器来定义数据类型，通过pipe来验证数据类型的正确与否，正确返回原数据，不正确抛出异常
+1. `class-validator& class-transformer` 进行 TS 中的 类型验证，统计装饰器来定义数据类型，通过 pipe 来验证数据类型的正确与否，正确返回原数据，不正确抛出异常
 2. 数据类型转换 pipe
 3. findUserByIdPipe 通过管道来实现业务逻辑
 4. 内置验证管道 validationPipe
 
-自定义管道后使用管道 ，通过作用域可以分为全局，方法，方法的参数。通过全局进行设置的时候和异常过滤器一样，使用`useGlobalPipes()`无法注入依赖，需要在根模块下通过provider声明的方法进行设置
+自定义管道后使用管道 ，通过作用域可以分为全局，方法，方法的参数。通过全局进行设置的时候和异常过滤器一样，使用`useGlobalPipes()`无法注入依赖，需要在根模块下通过 provider 声明的方法进行设置
 
 ```typescript
-import { Module } from '@nestjs/common';
-import { APP_PIPE } from '@nestjs/core';
+import { Module } from '@nestjs/common'
+import { APP_PIPE } from '@nestjs/core'
 
 @Module({
   providers: [
     {
       provide: APP_PIPE,
-      useClass: ValidationPipe
-    }
-  ]
+      useClass: ValidationPipe,
+    },
+  ],
 })
 export class AppModule {}
-
 ```
-
-
-
-
 
 ### 2020.11.19
 

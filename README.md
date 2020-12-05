@@ -102,6 +102,15 @@ nodemon 模式启动项目 ： yarn start:dev ，这样每次修改代码后程�
 
 ### [Day5](./readme/Nestjs30Days/day5.md) 2020-11-16
 
+Pipe 管道，通常意义上用于数据的验证，用于验证输入的数据是否符 service 的规范，提供了两种方案
+
+1. javascript 写法中的通过字面量对象的模式规定数据类型，通过 Joi 库实现
+2. typescript 的写法，通过 TS 类型来定义 DTO 的数据类型，并通过库 class-validator 和 class-transform 来辅助验证
+
+当然还有别的用途，可以细看文档了。
+
+管道 Pipe 在异常过滤之后调用，所以验证不通过的时候可以直接抛出异常，让 Filter 过滤器来处理验证不通过的情况
+
 ## 规范
 
 1. [git commit message 规范设置](./readme/git_cmmit_message.md)
